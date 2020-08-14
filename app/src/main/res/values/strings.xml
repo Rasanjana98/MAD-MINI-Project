@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AnyHelp</string>
+    <string name="FirstPage_SignUp_button">SIGN UP</string>
+    <string name="FirstPage_login_button">LOGIN</string>
+    <string name="RegisterChoosePage_Custometr_button">Customer</string>
+    <string name="RegisterChoosePage_ServiceProvider_button">Service Provider</string>
+    <string name="LoginPage_email_input">Email</string>
+    <string name="LoginPage_password_input">Password</string>
+    <string name="Header1">Register Here</string>
+    <string name="InputFname">First Name</string>
+    <string name="inputLname">Last Name</string>
+    <string name="inputEmail">E-mail</string>
+    <string name="inputPhone">Phone number</string>
+    <string name="inputPassword">Password</string>
+    <string name="inputRepassword">Confirm password</string>
+    <string name="message1">Already have an account?</string>
+    <string name="link1">Login</string>
+    <string name="link2">Register</string>
+</resources>
