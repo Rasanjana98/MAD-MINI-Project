@@ -6,6 +6,7 @@
     <string name="RegisterChoosePage_ServiceProvider_button">Service Provider</string>
     <string name="LoginPage_email_input">Email</string>
     <string name="LoginPage_password_input">Password</string>
+    <string name="LoginPage_login_button">Login</string>
     <string name="Header1">Register Here</string>
     <string name="InputFname">First Name</string>
     <string name="inputLname">Last Name</string>
