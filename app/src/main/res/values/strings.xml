@@ -16,4 +16,22 @@
     <string name="message1">Already have an account?</string>
     <string name="link1">Login</string>
     <string name="link2">Register</string>
+    <string name="heading1">Start Career as Tecacher</string>
+    <string name="inputSubject">Select Subject</string>
+    <string name="inputGrade">Grade</string>
+    <string name="inputLocation">Location</string>
+    <string name="inputTime">Available Time</string>
+    <string name="inputQualification">Qualifications</string>
+    <string name="inputDescription">Description</string>
+    <string name="nextButton">NEXT</string>
+    <string name="Teacher_profile_Name">Name</string>
+    <string name="teacher_profile_name">My Profile</string>
+    <string name="teacher_profile_profession">Proffession</string>
+    <string name="teacher_profile_phone">Phone number</string>
+    <string name="teacher_profile_subjects">Subjects</string>
+    <string name="teacher_profile_AvailableTime">Available time</string>
+    <string name="teacher_profile_Location">Location</string>
+    <string name="teacher_profile_update">Update</string>
+    <string name="teacher_profile_CheckAppoinments">Check Appoinments</string>
+    <string name="teacher_profile_Qualifications">Qualifications</string>
 </resources>
