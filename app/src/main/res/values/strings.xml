@@ -41,7 +41,17 @@
     <string name="Nurse_career_Available_time_input">Available Time</string>
     <string name="Nurse_career_Qulifications_input">Qualifications</string>
 
-
-
+    <string name="addAppointment_next">Next</string>
+    <string-array name="addAppointment_location_arrays">
+        <item>Colombo</item>
+        <item>Gampaha</item>
+        <item>Kaluthara</item>
+        <item>Galle</item>
+        <item>Negombo</item>
+    </string-array>
+    <string name="addAppointment_heading">Add a Appointment</string>
+    <string name="addAppointment_date">Date</string>
+    <string name="addAppointment_task">Task</string>
+    <string name="addAppointment_location">Location</string>
 
 </resources>
