@@ -1,4 +1,5 @@
 <resources>
+    //Rasanjana
     <string name="app_name">AnyHelp</string>
     <string name="FirstPage_SignUp_button">SIGN UP</string>
     <string name="FirstPage_login_button">LOGIN</string>
@@ -41,6 +42,7 @@
     <string name="Nurse_career_Available_time_input">Available Time</string>
     <string name="Nurse_career_Qulifications_input">Qualifications</string>
 
+    //Hashan
     <string name="addAppointment_next">Next</string>
     <string-array name="addAppointment_location_arrays">
         <item>Colombo</item>
@@ -54,4 +56,7 @@
     <string name="addAppointment_task">Task</string>
     <string name="addAppointment_location">Location</string>
 
+    //Himantha
+
+    //Buddima
 </resources>
