@@ -55,6 +55,22 @@
     <string name="addAppointment_date">Date</string>
     <string name="addAppointment_task">Task</string>
     <string name="addAppointment_location">Location</string>
+    <string name="plumber_career_heading">Start Career as Plumber</string>
+    <string name="plumber_career_name">Name</string>
+    <string name="plumber_career_contactNumber">Contact Number</string>
+    <string name="plumber_career_qualification">Qualification</string>
+    <string name="plumber_career_description">Description</string>
+    <string name="plumber_career_availableTime">Available Time</string>
+    <string-array name="plumber_career_availableTime_arrays">
+        <item>Day</item>
+        <item>Night</item>
+        <item>Day/Night</item>
+    </string-array>
+
+
+
+
+
 
     //Himantha
 
