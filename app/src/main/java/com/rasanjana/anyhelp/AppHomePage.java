@@ -44,5 +44,6 @@ public class AppHomePage extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
     }
 }

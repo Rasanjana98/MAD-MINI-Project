@@ -67,6 +67,14 @@
         <item>Night</item>
         <item>Day/Night</item>
     </string-array>
+    <string name="my_appointments_heading">My Appointments</string>
+    <string name="career_page_name">Name</string>
+    <string name="career_page_profession">Profession</string>
+    <string name="career_page_Location">Location</string>
+    <string name="career_page_description">Description</string>
+    <string name="career_page_appointments">Appointments</string>
+    <string name="career_page_addAAppointment">Add an Appointment</string>
+    <string name="career_page_call">Call</string>
 
     //IT19030272
     <string name="Nurse_career_heading">Start Career as Nurse </string>
