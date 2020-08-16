@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginPage">
+    tools:context=".loginPage"
+    android:background="@drawable/img10">
     <RelativeLayout
         android:id="@+id/action_bar"
         android:layout_width="match_parent"

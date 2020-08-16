@@ -9,27 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareerViewAddedAppointment">
+        <activity android:name=".TeacherAppointments"></activity>
+        <activity android:name=".NurseProfile" />
+        <activity android:name=".ServiceProviderRegister" />
+        <activity android:name=".NurseCareerCreate" >
+
+        </activity>
+        <activity android:name=".AppHomePage" />
+        <activity android:name=".TeacherProfile" />
+        <activity android:name=".TeacherCareerCreate" >
+
+        </activity>
+        <activity android:name=".UserRegister" />
+        <activity android:name=".loginPage" />
+        <activity android:name=".ChooseRegisterType" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MechanicProfileActivity" />
-        <activity android:name=".PlumberProfileActivity" />
-        <activity android:name=".TeacherAppointments" />
-        <activity android:name=".NurseProfile" />
-        <activity android:name=".ServiceProviderRegister" />
-        <activity android:name=".NurseCareerCreate" />
-        <activity android:name=".AppHomePage" />
-        <activity android:name=".TeacherProfile" />
-        <activity android:name=".TeacherCareerCreate" />
-        <activity android:name=".UserRegister" />
-        <activity android:name=".loginPage" />
-        <activity android:name=".ChooseRegisterType" />
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 
