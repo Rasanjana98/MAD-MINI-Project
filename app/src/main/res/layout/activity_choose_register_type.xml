@@ -5,6 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChooseRegisterType">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorActionbarColor"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:scaleType="center"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:text= "@string/Choose_Register_type"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/button4"
@@ -12,6 +47,7 @@
         android:layout_height="37dp"
         android:layout_marginTop="528dp"
         android:text="@string/RegisterChoosePage_ServiceProvider_button"
+        android:background="@color/buttonBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,19 +58,8 @@
         android:layout_height="37dp"
         android:layout_marginTop="460dp"
         android:text="@string/RegisterChoosePage_Custometr_button"
+        android:background="@color/buttonBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="140dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="308dp"
-        android:text="Register"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +67,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"

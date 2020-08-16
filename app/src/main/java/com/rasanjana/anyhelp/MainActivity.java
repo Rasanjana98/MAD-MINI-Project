@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         button2=findViewById(R.id.login);
 
         Log.i(TAG, "onCreate: ");
+
+        ImageView ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
     @Override
     protected  void onResume() {

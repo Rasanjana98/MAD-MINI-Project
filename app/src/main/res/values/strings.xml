@@ -1,5 +1,5 @@
 <resources>
-    //Rasanjana
+    //IT19007120
     <string name="app_name">AnyHelp</string>
     <string name="FirstPage_SignUp_button">SIGN UP</string>
     <string name="FirstPage_login_button">LOGIN</string>
@@ -27,6 +27,7 @@
     <string name="inputDescription">Description</string>
     <string name="nextButton">NEXT</string>
     <string name="Teacher_profile_Name">Name</string>
+    <string name="Teacher_prodfile_Heding">My Profile</string>
     <string name="teacher_profile_name">My Profile</string>
     <string name="teacher_profile_profession">Proffession</string>
     <string name="teacher_profile_phone">Phone number</string>
@@ -34,13 +35,13 @@
     <string name="teacher_profile_AvailableTime">Available time</string>
     <string name="teacher_profile_Location">Location</string>
     <string name="teacher_profile_update">Update</string>
-    <string name="teacher_profile_CheckAppoinments">Check Appoinments</string>
+    <string name="teacher_profile_CheckAppointments">Check Appointments</string>
     <string name="teacher_profile_Qualifications">Qualifications</string>
-    <string name="Nurse_career_category_input">Service Categories</string>
-    <string name="Nurse_career_gender_input">Gender</string>
-    <string name="Nurse_career_location_input">Location</string>
-    <string name="Nurse_career_Available_time_input">Available Time</string>
-    <string name="Nurse_career_Qulifications_input">Qualifications</string>
+    <string name="Choose_Register_type">Select your registration type</string>
+    <string name="First_page_Heading">Any Help</string>
+    <string name="login_page_Heading">Login</string>
+    <string name="teacher_profile_heading">My Profile</string>
+    <string name="teacher_appointments_heading">Appointments</string>
 
     //Hashan
     <string name="addAppointment_next">Next</string>
@@ -67,12 +68,30 @@
         <item>Day/Night</item>
     </string-array>
 
+    //IT19030272
+    <string name="Nurse_career_heading">Start Career as Nurse </string>
+    <string name="Nurse_career_category_input">Service Categories</string>
+    <string name="Nurse_career_gender_input">Gender</string>
+    <string name="Nurse_career_location_input">Location</string>
+    <string name="Nurse_career_Available_time_input">Available Time</string>
+    <string name="Nurse_career_Qulifications_input">Qualifications</string>
+    <string name="Nurse_career_Next_button">NEXT</string>
+    <string name="Service_provider_Fname">First Name</string>
+    <string name="Service_provider_Lname">Last Name</string>
+    <string name="Service_provider_Profession">Profession</string>
+    <string name="Service_provider_Email">Email</string>
+    <string name="Service_provider_PhoneNumber">Phone Number</string>
+    <string name="Service_provider_password">Password</string>
+    <string name="Service_provider_RePassword">Confirm Password</string>
+    <string name="Service_provider_heading">Register as Service Provider</string>
+
+    <string name="Nurse_profile_categories">Service Categories</string>
+    <string name="Nurse_profile_Gender">Gender</string>
+    <string name="Nurse_profile_Location">Location</string>
+    <string name="Nurse_profile_AvailableTime">Available Time</string>
+    <string name="Nurse_profile_Qualifications">Qualifications</string>
+    <string name="Nurse_profile_Update_Button">UPDATE</string>
+    <string name="Nurse_profile_CheckAppoinments_Button">CHECK APPOINTMENTS</string>
 
 
-
-
-
-    //Himantha
-
-    //Buddima
 </resources>

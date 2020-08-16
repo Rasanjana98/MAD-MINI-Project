@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class loginPage extends AppCompatActivity {
+public class NurseProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_nurse_profile);
 
         ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(new View.OnClickListener() {

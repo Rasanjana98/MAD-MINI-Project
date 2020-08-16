@@ -5,6 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TeacherCareerCreate">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorActionbarColor"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:scaleType="center"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+    </RelativeLayout>
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -66,6 +90,7 @@
         android:layout_marginTop="436dp"
         android:gravity="top"
         android:inputType="text|textMultiLine"
+        android:background="@drawable/edit_text_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +113,7 @@
         android:layout_marginTop="492dp"
         android:gravity="top"
         android:inputType="text|textMultiLine"
+        android:background="@drawable/edit_text_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
@@ -275,22 +301,12 @@
         android:layout_width="314dp"
         android:layout_height="0dp"
         android:layout_marginTop="544dp"
+        android:backgroundTint="@color/buttonBackground"
         android:text="@string/nextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

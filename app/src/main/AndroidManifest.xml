@@ -9,12 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlumberCareerCreate"></activity>
-        <activity android:name=".AddAppointment" />
-        <activity android:name=".NurseCareerCreate" />
+        <activity android:name=".TeacherAppointments"></activity>
+        <activity android:name=".NurseProfile" />
+        <activity android:name=".ServiceProviderRegister" />
+        <activity android:name=".NurseCareerCreate" >
+
+        </activity>
         <activity android:name=".AppHomePage" />
         <activity android:name=".TeacherProfile" />
-        <activity android:name=".TeacherCareerCreate" />
+        <activity android:name=".TeacherCareerCreate" >
+
+        </activity>
         <activity android:name=".UserRegister" />
         <activity android:name=".loginPage" />
         <activity android:name=".ChooseRegisterType" />

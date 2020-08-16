@@ -37,17 +37,18 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:scaleType="center"
+            android:text= "@string/plumber_career_heading"
             android:textColor="#000000"
-            android:text="@string/plumber_career_heading"
             android:textSize="16dp" />
 
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:layout_width="0dp"
@@ -60,18 +61,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_weight="2"
-            android:padding="8dp"
-            android:ems="10"
             android:background="@drawable/edit_text_bg"
-            android:inputType="text" />
+            android:ems="10"
+            android:inputType="text"
+            android:padding="8dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:layout_width="0dp"
@@ -84,18 +85,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_weight="2"
-            android:ems="10"
-            android:padding="8dp"
             android:background="@drawable/edit_text_bg"
-            android:inputType="number" />
+            android:ems="10"
+            android:inputType="number"
+            android:padding="8dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:layout_width="0dp"
@@ -108,9 +109,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_weight="2"
-            android:padding="8dp"
             android:background="@drawable/edit_text_bg"
-            android:entries="@array/addAppointment_location_arrays" />
+            android:entries="@array/addAppointment_location_arrays"
+            android:padding="8dp" />
 
     </LinearLayout>
 
@@ -118,8 +119,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:layout_width="0dp"
@@ -130,11 +131,11 @@
         <Spinner
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:padding="8dp"
             android:layout_marginLeft="15dp"
+            android:layout_weight="2"
             android:background="@drawable/edit_text_bg"
-            android:entries="@array/plumber_career_availableTime_arrays" />
+            android:entries="@array/plumber_career_availableTime_arrays"
+            android:padding="8dp" />
 
 
     </LinearLayout>
@@ -143,8 +144,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:layout_width="0dp"
@@ -156,8 +157,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/edit_text_bg"
             android:layout_weight="2"
+            android:background="@drawable/edit_text_bg"
             android:ems="10"
             android:lines="4" />
 
@@ -167,8 +168,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:layout_width="0dp"
@@ -180,22 +181,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/edit_text_bg"
             android:layout_weight="2"
+            android:background="@drawable/edit_text_bg"
             android:ems="10"
             android:lines="4" />
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:background="@color/buttonBackground"
-            android:text="@string/addAppointment_next"
-            android:layout_alignParentBottom="true"
-            />
+            android:text="@string/addAppointment_next" />
     </RelativeLayout>
 </LinearLayout>
