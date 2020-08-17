@@ -43,7 +43,7 @@
     <string name="teacher_profile_heading">My Profile</string>
     <string name="teacher_appointments_heading">Appointments</string>
 
-    //Hashan
+    //IT18013160
     <string name="addAppointment_next">Next</string>
     <string-array name="addAppointment_location_arrays">
         <item>Colombo</item>
