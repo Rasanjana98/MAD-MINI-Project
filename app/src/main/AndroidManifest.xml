@@ -14,6 +14,7 @@
         <activity android:name=".ServiceProviderRegister" />
         <activity android:name=".NurseCareerCreate" >
 
+
         </activity>
         <activity android:name=".AppHomePage" />
         <activity android:name=".TeacherProfile" />
