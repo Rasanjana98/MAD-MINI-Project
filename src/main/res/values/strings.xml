@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MAD_Application</string>
+    <string name="RegisterHeading">Start Career as a Mechanic</string>
+    <string name="SelectField">Select Field</string>
+    <string name="Location">Location</string>
+    <string name="AvailableTime">Available Time</string>
+    <string name="Qualifications">Qualifications</string>
+    <string name="Description">Description</string>
+    <string name="MyProfile">My Profile</string>
+    <string name="DeleteAccount">Delete My Account</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="Update">Update</string>
+    <string name="CheckAppointment">Check Appointment</string>
+    <string name="AnyHelp">Any Help</string>
+    <string name="Payment">Payment</string>
+    <string name="CardNumber">Card Number</string>
+    <string name="NameOnCard">Name On Card</string>
+    <string name="ExpireDate">Expire Date</string>
+    <string name="CVV">CVV</string>
+    <string name="StartCareer">Start Career</string>
+    <string name="EditProfile">Edit Profile</string>
+    <string name="next">Next</string>
+
+    <string-array name="Location_arrays">
+        <item>Colombo</item>
+        <item>Gampaha</item>
+        <item>Kaluthara</item>
+        <item>Galle</item>
+        <item>Negombo</item>
+    </string-array>
+
+    <string-array name="Time_arrays">
+        <item>Day</item>
+        <item>Night</item>
+        <item>Day/Night</item>
+    </string-array>
+</resources>

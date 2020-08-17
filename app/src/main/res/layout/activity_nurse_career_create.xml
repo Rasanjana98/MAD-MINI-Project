@@ -5,6 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NurseCareerCreate">
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="504dp"
+        android:text="@string/inputDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_text4"
+        android:layout_width="173dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="504dp"
+        android:background="@drawable/edit_text_bg"
+        android:gravity="top"
+        android:inputType="text|textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <RelativeLayout
         android:id="@+id/action_bar"
         android:layout_width="match_parent"
@@ -58,7 +83,7 @@
         android:id="@+id/planets_spinner3"
         android:layout_width="178dp"
         android:layout_height="23dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginTop="392dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.643"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +93,9 @@
         android:id="@+id/edit_text3"
         android:layout_width="172dp"
         android:layout_height="29dp"
-        android:layout_marginTop="464dp"
-        android:gravity="top"
+        android:layout_marginTop="448dp"
         android:background="@drawable/edit_text_bg"
+        android:gravity="top"
         android:inputType="text|textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.627"
@@ -102,7 +127,7 @@
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="472dp"
+        android:layout_marginTop="448dp"
         android:text="@string/Nurse_career_Qulifications_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
@@ -124,7 +149,7 @@
         android:id="@+id/textView38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="396dp"
         android:text="@string/Nurse_career_Available_time_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
