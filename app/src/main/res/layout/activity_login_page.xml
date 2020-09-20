@@ -43,7 +43,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/login"
         android:layout_width="324dp"
         android:layout_height="46dp"
         android:layout_marginTop="536dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/email"
         android:layout_width="212dp"
         android:layout_height="33dp"
         android:layout_marginTop="324dp"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password"
         android:layout_width="213dp"
         android:layout_height="32dp"
         android:layout_marginTop="448dp"
