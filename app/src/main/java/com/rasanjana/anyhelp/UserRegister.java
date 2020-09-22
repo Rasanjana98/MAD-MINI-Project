@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class UserRegister extends AppCompatActivity {
     EditText fName,lName,email,pNumber,password,cPassword;
     Button button;
-    FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -35,40 +34,8 @@ public class UserRegister extends AppCompatActivity {
         password=findViewById(R.id.password);
         cPassword=findViewById(R.id.cPassword);
 
-        firebaseAuth=FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser() !=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String Email=email.getText().toString().trim();
-                String Password=password.getText().toString().trim();
-
-                if(TextUtils.isEmpty(Email)){
-                    email.setError("Email is required");
-                    return;
-                }
-                if(TextUtils.isEmpty(Password)){
-                    password.setError("Password is required");
-                }
-
-                firebaseAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(UserRegister.this,"User Created",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            Toast.makeText(UserRegister.this,"Error"+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
-        });
 
         ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(new View.OnClickListener() {
@@ -78,15 +45,15 @@ public class UserRegister extends AppCompatActivity {
             }
         });
     }
-//    @Override
-//    protected  void onResume() {
-//        super.onResume();
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent myIntent=new Intent(UserRegister.this,AppHomePage.class);
-//                startActivity(myIntent);
-//            }
-//        });
-//    }
+    @Override
+    protected  void onResume() {
+        super.onResume();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(UserRegister.this,AppHomePage.class);
+                startActivity(myIntent);
+            }
+        });
+    }
 }

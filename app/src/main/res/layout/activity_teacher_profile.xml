@@ -42,17 +42,6 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Delete my account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -180,7 +169,6 @@
         android:layout_width="155dp"
         android:layout_height="17dp"
         android:layout_marginTop="216dp"
-        android:text="_____________"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +179,6 @@
         android:layout_width="155dp"
         android:layout_height="17dp"
         android:layout_marginTop="260dp"
-        android:text="_____________"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
@@ -202,7 +189,6 @@
         android:layout_width="155dp"
         android:layout_height="17dp"
         android:layout_marginTop="300dp"
-        android:text="_____________"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,10 +199,30 @@
         android:layout_width="155dp"
         android:layout_height="17dp"
         android:layout_marginTop="340dp"
-        android:text="_____________"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/DltAcntBtn"
+        android:layout_width="259dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="124dp"
+        android:background="@color/design_default_color_error"
+        android:text="Delete account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="80dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

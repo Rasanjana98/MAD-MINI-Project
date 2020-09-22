@@ -9,13 +9,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class TeacherProfile extends AppCompatActivity {
-    Button button;
+    Button button,AcntDltBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_profile);
         button=findViewById(R.id.button5);
+        AcntDltBtn=findViewById(R.id.DltAcntBtn);
 
         ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(new View.OnClickListener() {
