@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "336887424820",
+    "firebase_url": "https://anyhelp-56540.firebaseio.com",
+    "project_id": "anyhelp-56540",
+    "storage_bucket": "anyhelp-56540.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336887424820:android:79b4288c6f8d1cb1646761",
+        "android_client_info": {
+          "package_name": "com.rasanjana.anyhelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336887424820-lq6dk4l952merkjag7vqcj0vjhno416b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rasanjana.anyhelp",
+            "certificate_hash": "c4aa3748bf1692d4dff697f6d8c16ca3de2d17dc"
+          }
+        },
+        {
+          "client_id": "336887424820-svn99bvcmqea43d5nieju41g9jmkk1qe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuBcSpeWSCz-khsZcjohNPR7H1hztQhCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336887424820-svn99bvcmqea43d5nieju41g9jmkk1qe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
