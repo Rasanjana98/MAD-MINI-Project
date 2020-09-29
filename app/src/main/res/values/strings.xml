@@ -45,6 +45,7 @@
 
     //IT18013160
     <string name="addAppointment_next">Next</string>
+    <string name="update">Update</string>
     <string-array name="addAppointment_location_arrays">
         <item>Colombo</item>
         <item>Gampaha</item>
@@ -57,6 +58,7 @@
     <string name="addAppointment_task">Task</string>
     <string name="addAppointment_location">Location</string>
     <string name="plumber_career_heading">Start Career as Plumber</string>
+    <string name="Update_details">Update Details</string>
     <string name="plumber_career_name">Name</string>
     <string name="plumber_career_contactNumber">Contact Number</string>
     <string name="plumber_career_qualification">Qualification</string>
@@ -75,6 +77,13 @@
     <string name="career_page_appointments">Appointments</string>
     <string name="career_page_addAAppointment">Add an Appointment</string>
     <string name="career_page_call">Call</string>
+    <string name="delete_account_btn">Delete my account</string>
+    <string name="plumbers">Plumber</string>
+    <string name="teachers">Teacher</string>
+    <string name="nurse">Nurse</string>
+    <string name="mechanic">Mechanic</string>
+    <string name="menu">Menu</string>
+
 
     //IT19030272
     <string name="Nurse_career_heading">Start Career as Nurse </string>

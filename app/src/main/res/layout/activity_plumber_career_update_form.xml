@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:scaleType="center"
-            android:text= "@string/plumber_career_heading"
+            android:text= "@string/Update_details"
             android:textColor="#000000"
             android:textSize="16dp" />
 
@@ -198,12 +198,12 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btnNext"
+            android:id="@+id/btnUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:background="@color/buttonBackground"
-            android:text="@string/addAppointment_next" />
+            android:text="@string/update" />
     </RelativeLayout>
 </LinearLayout>
