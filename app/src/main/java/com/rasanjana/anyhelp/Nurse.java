@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Nurse {
     //private String BabyCare,WoundDressing,FirstAid,ElderlyCare,VigilantObservations,Injections;
+    private String Name;
     private String Gender;
     private String Location;
     private String AvailableTime;
@@ -23,7 +24,16 @@ public class Nurse {
         this.serviceCategories = serviceCategories;
     }
 
-//    public String getBabyCare() {
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    //    public String getBabyCare() {
+
 //        return BabyCare;
 //    }
 //
