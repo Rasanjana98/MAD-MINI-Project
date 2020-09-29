@@ -1,94 +1,32 @@
 package com.rasanjana.anyhelp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Teacher {
-    private String sinhala, english, science, physics, tamil, biology, mathematics, chemistry, accounting, economics;
     private String primary,sixtoOl,Grade;
     private String Location;
     private String time;
     private String qualifications;
     private String description;
+    private List<String> subjects = new ArrayList<>();
+    private  List<String>grades= new ArrayList<>();
 
     public Teacher() {
     }
 
-    public String getSinhala() {
-        return sinhala;
+    public List<String> getSubjects() {
+        return subjects;
     }
 
-    public void setSinhala(String sinhala) {
-        this.sinhala = sinhala;
+    public void setSubjects(List<String> subjects) {
+        this.subjects = subjects;
     }
-
-    public String getEnglish() {
-        return english;
+    public List<String> getGrades() {
+        return grades;
     }
-
-    public void setEnglish(String english) {
-        this.english = english;
-    }
-
-    public String getScience() {
-        return science;
-    }
-
-    public void setScience(String science) {
-        this.science = science;
-    }
-
-    public String getPhysics() {
-        return physics;
-    }
-
-    public void setPhysics(String physics) {
-        this.physics = physics;
-    }
-
-    public String getTamil() {
-        return tamil;
-    }
-
-    public void setTamil(String tamil) {
-        this.tamil = tamil;
-    }
-
-    public String getBiology() {
-        return biology;
-    }
-
-    public void setBiology(String biology) {
-        this.biology = biology;
-    }
-
-    public String getMathematics() {
-        return mathematics;
-    }
-
-    public void setMathematics(String mathematics) {
-        this.mathematics = mathematics;
-    }
-
-    public String getChemistry() {
-        return chemistry;
-    }
-
-    public void setChemistry(String chemistry) {
-        this.chemistry = chemistry;
-    }
-
-    public String getAccounting() {
-        return accounting;
-    }
-
-    public void setAccounting(String accounting) {
-        this.accounting = accounting;
-    }
-
-    public String getEconomics() {
-        return economics;
-    }
-
-    public void setEconomics(String economics) {
-        this.economics = economics;
+    public void setGrades(List<String> grades){
+        this.grades=grades;
     }
 
     public String getPrimary() {
@@ -147,4 +85,3 @@ public class Teacher {
         this.description = description;
     }
 }
-

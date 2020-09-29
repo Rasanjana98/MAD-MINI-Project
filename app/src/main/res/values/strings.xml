@@ -123,6 +123,8 @@
     <string name="StartCareer">Start Career</string>
     <string name="EditProfile">Edit Profile</string>
     <string name="next">Next</string>
+    <string name="teacherUpdateHeading">Update Your Profile</string>
+    <string name="TeacherUpdateBtn">Update Details</string>
 
     <string-array name="Location_arrays">
         <item>Colombo</item>

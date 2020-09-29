@@ -21,10 +21,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NurseCareerCreate extends AppCompatActivity {
     CheckBox BabyCare,WoundDressing,FirstAid,ElderlyCare,VigilantObservations,Injections;
     EditText qualifications,description;
-    RadioButton genderM,genderF;
     Nurse nurse;
     Spinner spinner,spinner1,spinner2;
     Button nextBtn;
@@ -75,48 +77,70 @@ public class NurseCareerCreate extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(BabyCare.isChecked()){
-                    nurse.setBabyCare(s1);
-                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
-                }
-                else{
+                List<String> serviceCategories = new ArrayList<>();
 
+                if(BabyCare.isChecked()){
+                    serviceCategories.add("Baby care");
                 }
                 if(WoundDressing.isChecked()){
-                    nurse.setWoundDressing(s2);
-                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
-                }
-                else{
-
+                    serviceCategories.add("Wound Dressing");
                 }
                 if(FirstAid.isChecked()){
-                    nurse.setFirstAid(s3);
-                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
-                }
-                else{
-
+                    serviceCategories.add("First Aid");
                 }
                 if(ElderlyCare.isChecked()){
-                    nurse.setElderlyCare(s4);
-                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
-                }
-                else{
-
+                    serviceCategories.add("Elderly Care");
                 }
                 if(VigilantObservations.isChecked()){
-                    nurse.setVigilantObservations(s5);
-                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
-                }
-                else{
-
+                    serviceCategories.add("Vigilant Observations");
                 }
                 if(Injections.isChecked()){
-                    nurse.setInjections(s6);
-                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+                    serviceCategories.add("Injections");
                 }
-                else{
 
-                }try{
+//                if(BabyCare.isChecked()){
+//                    nurse.setBabyCare(s1);
+//                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+//                }
+//                else{
+//
+//                }
+//                if(WoundDressing.isChecked()){
+//                    nurse.setWoundDressing(s2);
+//                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+//                }
+//                else{
+//
+//                }
+//                if(FirstAid.isChecked()){
+//                    nurse.setFirstAid(s3);
+//                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+//                }
+//                else{
+//
+//                }
+//                if(ElderlyCare.isChecked()){
+//                    nurse.setElderlyCare(s4);
+//                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+//                }
+//                else{
+//
+//                }
+//                if(VigilantObservations.isChecked()){
+//                    nurse.setVigilantObservations(s5);
+//                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+//                }
+//                else{
+//
+//                }
+//                if(Injections.isChecked()){
+//                    nurse.setInjections(s6);
+//                    dbRef.child(String.valueOf(i+1)).setValue(nurse);
+//                }
+//                else{
+//
+//                }
+                try{
                     if(TextUtils.isEmpty(qualifications.getText().toString())){
                         Toast.makeText(getApplicationContext(),"Please enter qualifications",Toast.LENGTH_SHORT).show();
                     }
@@ -129,6 +153,8 @@ public class NurseCareerCreate extends AppCompatActivity {
                         nurse.setLocation(spinner.getSelectedItem().toString().trim());
                         nurse.setAvailableTime(spinner1.getSelectedItem().toString().trim());
                         nurse.setGender(spinner2.getSelectedItem().toString().trim());
+                        nurse.setServiceCategories(serviceCategories);
+
                         dbRef.push().setValue(nurse);
                         Toast.makeText(getApplicationContext(),"Data saved Successfully",Toast.LENGTH_SHORT).show();
                     }

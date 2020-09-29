@@ -21,6 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TeacherCareerCreate extends AppCompatActivity {
     CheckBox sinhala,english,science,physics,tamil,biology,mathematics,chemistry,accounting,economics,primary,sixToOl,al;
     EditText qualifications,description;
@@ -88,104 +91,51 @@ public class TeacherCareerCreate extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               if(sinhala.isChecked()){
-                   teacher.setSinhala(s1);
-                   dbRef.child(String.valueOf(i+1)).setValue(teacher);
-               }
-               else{
+                List<String> subjects = new ArrayList<>();
 
-               }
+                if(sinhala.isChecked()){
+                    subjects.add("Sinhala");
+                }
                 if(english.isChecked()){
-                    teacher.setEnglish(s2);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
-                }
-                if(science.isChecked()){
-                    teacher.setScience(s3);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
-                }
-                if(physics.isChecked()){
-                    teacher.setPhysics(s4);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    subjects.add("English");
                 }
                 if(tamil.isChecked()){
-                    teacher.setTamil(s5);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
+                    subjects.add("Tamil");
                 }
-                else{
-
+                if(science.isChecked()){
+                    subjects.add("Science");
+                }
+                if(physics.isChecked()){
+                    subjects.add("Physics");
                 }
                 if(biology.isChecked()){
-                    teacher.setBiology(s6);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    subjects.add("Biology");
                 }
                 if(mathematics.isChecked()){
-                    teacher.setMathematics(s7);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    subjects.add("Mathematics");
                 }
                 if(chemistry.isChecked()){
-                    teacher.setChemistry(s8);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    subjects.add("Chemistry");
                 }
                 if(accounting.isChecked()){
-                    teacher.setAccounting(s9);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    subjects.add("Accounting");
                 }
                 if(economics.isChecked()){
-                    teacher.setEconomics(s10);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
+                    subjects.add("Economics");
                 }
-                else{
 
-                }
-                if(economics.isChecked()){
-                    teacher.setEconomics(s10);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
+                List<String> grades = new ArrayList<>();
 
-                }
                 if(primary.isChecked()){
-                    teacher.setPrimary(g1);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    grades.add("Primary");
                 }
                 if(sixToOl.isChecked()){
-                    teacher.setSixtoOl(g2);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
-                }
-                else{
-
+                    grades.add("Six-OL");
                 }
                 if(al.isChecked()){
-                    teacher.setGrade(g3);
-                    dbRef.child(String.valueOf(i+1)).setValue(teacher);
+                    grades.add("A/L");
                 }
-                else{
 
-                }
 
                 try{
                     if(TextUtils.isEmpty(qualifications.getText().toString())){
@@ -199,6 +149,8 @@ public class TeacherCareerCreate extends AppCompatActivity {
                         teacher.setDescription(description.getText().toString().trim());
                         teacher.setLocation(spinner.getSelectedItem().toString().trim());
                         teacher.setTime(spinnerTime.getSelectedItem().toString().trim());
+                        teacher.setSubjects(subjects);
+                        teacher.setGrades(grades);
 
                         dbRef.push().setValue(teacher);
                         Toast.makeText(getApplicationContext(),"Data saved Successfully",Toast.LENGTH_SHORT).show();

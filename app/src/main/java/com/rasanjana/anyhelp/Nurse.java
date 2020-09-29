@@ -1,63 +1,75 @@
 package com.rasanjana.anyhelp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Nurse {
-    private String BabyCare,WoundDressing,FirstAid,ElderlyCare,VigilantObservations,Injections;
+    //private String BabyCare,WoundDressing,FirstAid,ElderlyCare,VigilantObservations,Injections;
     private String Gender;
     private String Location;
     private String AvailableTime;
     private String  Qualifications;
     private String Description;
+    private List<String> serviceCategories = new ArrayList<>();
+
 
     public Nurse() {
     }
-
-    public String getBabyCare() {
-        return BabyCare;
+    public List<String> getServiceCategories() {
+        return serviceCategories;
     }
 
-    public void setBabyCare(String babyCare) {
-        BabyCare = babyCare;
+    public void setServiceCategories(List<String> serviceCategories) {
+        this.serviceCategories = serviceCategories;
     }
 
-    public String getWoundDressing() {
-        return WoundDressing;
-    }
-
-    public void setWoundDressing(String woundDressing) {
-        WoundDressing = woundDressing;
-    }
-
-    public String getFirstAid() {
-        return FirstAid;
-    }
-
-    public void setFirstAid(String firstAid) {
-        FirstAid = firstAid;
-    }
-
-    public String getElderlyCare() {
-        return ElderlyCare;
-    }
-
-    public void setElderlyCare(String elderlyCare) {
-        ElderlyCare = elderlyCare;
-    }
-
-    public String getVigilantObservations() {
-        return VigilantObservations;
-    }
-
-    public void setVigilantObservations(String vigilantObservations) {
-        VigilantObservations = vigilantObservations;
-    }
-
-    public String getInjections() {
-        return Injections;
-    }
-
-    public void setInjections(String injections) {
-        Injections = injections;
-    }
+//    public String getBabyCare() {
+//        return BabyCare;
+//    }
+//
+//    public void setBabyCare(String babyCare) {
+//        BabyCare = babyCare;
+//    }
+//
+//    public String getWoundDressing() {
+//        return WoundDressing;
+//    }
+//
+//    public void setWoundDressing(String woundDressing) {
+//        WoundDressing = woundDressing;
+//    }
+//
+//    public String getFirstAid() {
+//        return FirstAid;
+//    }
+//
+//    public void setFirstAid(String firstAid) {
+//        FirstAid = firstAid;
+//    }
+//
+//    public String getElderlyCare() {
+//        return ElderlyCare;
+//    }
+//
+//    public void setElderlyCare(String elderlyCare) {
+//        ElderlyCare = elderlyCare;
+//    }
+//
+//    public String getVigilantObservations() {
+//        return VigilantObservations;
+//    }
+//
+//    public void setVigilantObservations(String vigilantObservations) {
+//        VigilantObservations = vigilantObservations;
+//    }
+//
+//    public String getInjections() {
+//        return Injections;
+//    }
+//
+//    public void setInjections(String injections) {
+//        Injections = injections;
+//    }
 
     public String getGender() {
         return Gender;
