@@ -32,8 +32,6 @@
     </RelativeLayout>
 
 
-
-
     <EditText
         android:id="@+id/lName"
         android:layout_width="200dp"
