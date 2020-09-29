@@ -111,9 +111,9 @@
         android:layout_width="173dp"
         android:layout_height="25dp"
         android:layout_marginTop="492dp"
+        android:background="@drawable/edit_text_bg"
         android:gravity="top"
         android:inputType="text|textMultiLine"
-        android:background="@drawable/edit_text_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,7 +179,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/heading1"
+        android:text="@string/teacherUpdateHeading"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -297,16 +297,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="314dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="544dp"
+        android:id="@+id/TeacherUpdateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="@string/nextButton"
+        android:text="@string/TeacherUpdateBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/edit_text2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

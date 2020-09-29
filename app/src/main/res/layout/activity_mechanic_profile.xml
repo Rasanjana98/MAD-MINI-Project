@@ -167,7 +167,7 @@
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/textV"
         android:layout_width="155dp"
         android:layout_height="17dp"
         android:layout_marginTop="256dp"
@@ -180,7 +180,7 @@
 
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/availableTimeN"
         android:layout_width="155dp"
         android:layout_height="17dp"
         android:layout_marginTop="300dp"

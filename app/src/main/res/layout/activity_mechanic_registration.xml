@@ -61,7 +61,7 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/c7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -72,7 +72,7 @@
                 tools:layout_editor_absoluteY="101dp" />
 
             <CheckBox
-                android:id="@+id/checkBox7"
+                android:id="@+id/c8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Van"
@@ -90,7 +90,7 @@
                 tools:ignore="MissingConstraints" />
 
             <CheckBox
-                android:id="@+id/checkBox8"
+                android:id="@+id/c10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Truck"

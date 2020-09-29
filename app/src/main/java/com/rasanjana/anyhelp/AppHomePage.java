@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class AppHomePage extends AppCompatActivity {
-    Button button2,button3;
+    Button button2,button3,button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +20,19 @@ public class AppHomePage extends AppCompatActivity {
 
         button2=findViewById(R.id.button9);
         button3=findViewById(R.id.button8);
-
+        button4=findViewById(R.id.logout);
         ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
     }
