@@ -40,14 +40,30 @@
             android:textSize="16dp" />
 
     </RelativeLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPlumbers"
+    <RelativeLayout
+        android:id="@+id/dropdown_profession"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/action_bar"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"/>
+        android:layout_below="@id/action_bar">
+
+        <Spinner
+            android:id="@+id/SpLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:entries="@array/addAppointment_location_arrays"
+            android:padding="8dp" />
+
+    </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/dropdown_profession"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"/>
 
 </RelativeLayout>
