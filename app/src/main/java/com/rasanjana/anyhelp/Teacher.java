@@ -1,5 +1,7 @@
 package com.rasanjana.anyhelp;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,11 @@ public class Teacher {
     private String description;
     private List<String> subjects = new ArrayList<>();
     private  List<String>grades= new ArrayList<>();
+
+    @Exclude
+    private String key;
+    @Exclude
+    private String profession;
 
     public Teacher() {
     }
@@ -83,5 +90,21 @@ public class Teacher {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

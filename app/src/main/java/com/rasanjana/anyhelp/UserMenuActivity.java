@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,12 +25,14 @@ public class UserMenuActivity extends AppCompatActivity {
 
     private static final String TAG = "UserMenuActivity";
 
+    TextView txtTitle;
     DatabaseReference dbRef;
     private List<Plumber> plumbers;
     private List<Teacher> teachers;
     //private List<Mechanic> mechanics;
     private List<Nurse> nurses;
-    private String profession = "";
+    public static String profession = "";
+    public static String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,8 @@ public class UserMenuActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        txtTitle = findViewById(R.id.txt_title);
 
         plumbers = new ArrayList<>();
         teachers = new ArrayList<>();
@@ -62,6 +67,17 @@ public class UserMenuActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(int position) {
                 Log.i(TAG, "onItemClicked: position = "+position);
+                Plumber plumber = plumbers.get(position);
+                plumber.setProfession(profession);
+                Log.i(TAG, "onItemClicked: plumber key = "+plumber.getKey());
+
+                Intent intent =  new Intent(UserMenuActivity.this, CareerProfileActivity.class);
+                String Key = plumber.getKey();
+                intent.putExtra(key, Key);
+                intent.putExtra(profession, profession);
+                startActivity(intent);
+                Log.i(TAG, "key: "+Key);
+                Log.i(TAG, "profession: "+profession);
             }
         });
         final TeacherUserMenuAdapter teacherAdapter = new TeacherUserMenuAdapter(this);
@@ -70,6 +86,17 @@ public class UserMenuActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(int position) {
                 Log.i(TAG, "onItemClicked: position"+position);
+                Teacher teacher = teachers.get(position);
+                teacher.setProfession(profession);
+                Log.i(TAG, "onItemClicked: plumber key = "+teacher.getKey());
+
+                Intent intent =  new Intent(UserMenuActivity.this, CareerProfileActivity.class);
+                String Key = teacher.getKey();
+                intent.putExtra(key, Key);
+                intent.putExtra(profession, profession);
+                startActivity(intent);
+                Log.i(TAG, "key: "+Key);
+                Log.i(TAG, "profession: "+profession);
 
             }
         });
@@ -87,6 +114,17 @@ public class UserMenuActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(int position) {
                 Log.i(TAG, "onItemClicked: position"+position);
+                Nurse nurse = nurses.get(position);
+                nurse.setProfession(profession);
+                Log.i(TAG, "onItemClicked: plumber key = "+nurse.getKey());
+
+                Intent intent =  new Intent(UserMenuActivity.this, CareerProfileActivity.class);
+                String Key = nurse.getKey();
+                intent.putExtra(key, Key);
+                intent.putExtra(profession, profession);
+                startActivity(intent);
+                Log.i(TAG, "key: "+Key);
+                Log.i(TAG, "profession: "+profession);
             }
         });
 
@@ -95,10 +133,9 @@ public class UserMenuActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(horizontalLayoutManager);
 
         switch (profession){
-            case "teacher":
+            case "Teacher":
                 recyclerView.setAdapter(teacherAdapter);
-
-
+                txtTitle.setText(profession);
                 DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Teacher");
                 readRef.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -107,6 +144,7 @@ public class UserMenuActivity extends AppCompatActivity {
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
                             Teacher teacher = postSnapshot.getValue(Teacher.class);
+                            teacher.setKey(postSnapshot.getKey());
                             teachers.add(teacher);
                         }
 
@@ -120,8 +158,9 @@ public class UserMenuActivity extends AppCompatActivity {
                 });
                 break;
 
-            case "nurse":
+            case "Nurse":
                 recyclerView.setAdapter(nurseAdapter);
+                txtTitle.setText(profession);
                 DatabaseReference readRef2 = FirebaseDatabase.getInstance().getReference().child("Nurse");
                 readRef2.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -130,6 +169,7 @@ public class UserMenuActivity extends AppCompatActivity {
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
                             Nurse nurse = postSnapshot.getValue(Nurse.class);
+                            nurse.setKey(postSnapshot.getKey());
                             nurses.add(nurse);
                         }
 
@@ -143,8 +183,9 @@ public class UserMenuActivity extends AppCompatActivity {
                 });
                 break;
 
-//            case "mechanic":
+//            case "Mechanic":
 //                recyclerView.setAdapter(mechanicAdapter);
+  //          txtTitle.setText(profession);
 //                DatabaseReference readRef3 = FirebaseDatabase.getInstance().getReference().child("Mechanic");
 //                readRef3.addValueEventListener(new ValueEventListener() {
 //                    @Override
@@ -165,8 +206,9 @@ public class UserMenuActivity extends AppCompatActivity {
 //                    }
 //                });
 //                break;
-            case "plumber":
+            case "Plumber":
                 recyclerView.setAdapter(plumberAdapter);
+                txtTitle.setText(profession);
                 DatabaseReference readRef4 = FirebaseDatabase.getInstance().getReference().child("Plumber");
                 readRef4.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -175,6 +217,7 @@ public class UserMenuActivity extends AppCompatActivity {
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
                             Plumber plumber = postSnapshot.getValue(Plumber.class);
+                            plumber.setKey(postSnapshot.getKey());
                             plumbers.add(plumber);
                         }
 

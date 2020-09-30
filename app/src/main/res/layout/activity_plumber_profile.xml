@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TeacherProfile">
+
     <RelativeLayout
         android:id="@+id/action_bar"
         android:layout_width="match_parent"
@@ -41,164 +44,279 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Delete my account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:text="@string/Nurse_profile_Qualifications"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="vertical">
+
+             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                 android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="                                                  "/>
+
+                 <Button
+                     android:id="@+id/btnDelete"
+                     android:layout_width="0dp"
+                     android:layout_weight="2"
+                     android:layout_height="wrap_content"
+                     android:text="@string/delete_account_btn"/>
+<!--            <TextView-->
+<!--                android:id="@+id/TvDeleteAccount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="right"-->
+<!--                android:text="Delete my account" />-->
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="3"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Teacher_profile_Name" />                                                  "/>
+
+                <TextView
+                    android:id="@+id/TvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="3"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/career_page_profession" />                                                  "/>
+
+                <TextView
+                    android:id="@+id/TvProfession"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="3"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Location" />                                                  "/>
+
+                <TextView
+                    android:id="@+id/TvLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="3"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/PhoneNumber" />                                                  "/>
+
+                <TextView
+                    android:id="@+id/TvPhoneNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="20dp"
+    android:weightSum="2"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="3dp">
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:text="@string/Nurse_profile_categories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        android:layout_weight="1"
+        android:text="Service Category" />                                                  "/>
 
     <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
+        android:id="@+id/TvServiceCategory"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="@string/Nurse_profile_AvailableTime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="@string/teacher_profile_profession"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:weightSum="2"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gender" />                                                  "/>
+
+        <TextView
+            android:id="@+id/TvGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:text="@string/teacher_profile_Location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:weightSum="2"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/AvailableTime" />                                                  "/>
+
+        <TextView
+            android:id="@+id/TvAvailableTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="@string/teacher_profile_phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:weightSum="2"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Qualifications" />                                                  "/>
+
+        <TextView
+            android:id="@+id/TvQualification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="@string/Teacher_profile_Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:weightSum="2"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="262dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="448dp"
-        android:backgroundTint="@color/buttonBackground"
-        android:text="@string/Nurse_profile_Update_Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Description" />                                                  "/>
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="260dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="508dp"
-        android:backgroundTint="@color/buttonBackground"
-        android:text="@string/Nurse_profile_CheckAppoinments_Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/TvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/textV"
-        android:layout_width="155dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="256dp"
-        android:text="_____________"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="262dp"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/Nurse_profile_Update_Button" />
+
+        <Button
+            android:id="@+id/btnCheckAppoinment"
+            android:layout_width="260dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/Nurse_profile_CheckAppoinments_Button" />
+
+    </LinearLayout>
+</LinearLayout>
 
 
-
-    <TextView
-        android:id="@+id/availableTimeN"
-        android:layout_width="155dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="300dp"
-        android:text="_____________"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="155dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="340dp"
-        android:text="_____________"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,7 +49,7 @@ public class AppHomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AppHomePage.this, UserMenuActivity.class);
-                String Profession = "teacher";
+                String Profession = "Teacher";
                 intent.putExtra(profession, Profession);
                 startActivity(intent);
             }
@@ -58,7 +58,7 @@ public class AppHomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AppHomePage.this, UserMenuActivity.class);
-                String Profession = "nurse";
+                String Profession = "Nurse";
                 intent.putExtra(profession, Profession);
                 startActivity(intent);
             }
@@ -66,7 +66,7 @@ public class AppHomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AppHomePage.this, UserMenuActivity.class);
-                String Profession = "mechanic";
+                String Profession = "Mechanic";
                 intent.putExtra(profession, Profession);
                 startActivity(intent);
             }
@@ -74,7 +74,7 @@ public class AppHomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AppHomePage.this, UserMenuActivity.class);
-                String Profession = "plumber";
+                String Profession = "Plumber";
                 intent.putExtra(profession, Profession);
                 startActivity(intent);
             }

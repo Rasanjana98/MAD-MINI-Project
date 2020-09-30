@@ -1,5 +1,7 @@
 package com.rasanjana.anyhelp;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,11 @@ public class Nurse {
     private String  Qualifications;
     private String Description;
     private List<String> serviceCategories = new ArrayList<>();
+
+    @Exclude
+    private String key;
+    @Exclude
+    private String profession;
 
 
     public Nurse() {
@@ -119,5 +126,21 @@ public class Nurse {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

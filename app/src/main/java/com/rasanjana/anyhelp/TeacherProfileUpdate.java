@@ -44,18 +44,18 @@ public class TeacherProfileUpdate extends AppCompatActivity {
         updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                Log.i(TAG,"OnDataChanged");
-//                ArrayList<String> subjectList=(ArrayList<String>) snapshot.child("subjects").getValue();
-//                String text ="";
-//                for (String subject :subjectList){
-//                    text += subject+" ";
-//                    if (subject.equals("Sinhala")){
-//                        cbSinhala.setChecked(true);
-//                    }
-//                    if (subject.equals("English")){
-//                        cbEnglish.setChecked(true);
-//                    }
-//                }
+                Log.i(TAG,"OnDataChanged");
+                ArrayList<String> subjectList=(ArrayList<String>) snapshot.child("subjects").getValue();
+                String text ="";
+                for (String subject :subjectList){
+                    text += subject+" ";
+                    if (subject.equals("Sinhala")){
+                        cbSinhala.setChecked(true);
+                    }
+                    if (subject.equals("English")){
+                        cbEnglish.setChecked(true);
+                    }
+                }
 
                 description.setText(snapshot.child("description").getValue().toString());
                 qualifications.setText(snapshot.child("qualifications").getValue().toString());

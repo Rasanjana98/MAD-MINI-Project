@@ -1,5 +1,7 @@
 package com.rasanjana.anyhelp;
 
+import com.google.firebase.database.Exclude;
+
 public class Plumber {
     private String name;
     private Integer contactNo;
@@ -7,6 +9,11 @@ public class Plumber {
     private String availableTime;
     private String qualifications;
     private String description;
+
+    @Exclude
+    private String key;
+    @Exclude
+    private String profession;
 
     public Plumber() {
     }
@@ -57,5 +64,21 @@ public class Plumber {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 }
