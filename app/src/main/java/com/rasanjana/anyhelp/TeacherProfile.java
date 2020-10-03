@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class TeacherProfile extends AppCompatActivity {
-    Button button,AcntDltBtn;
+    Button button,AcntDltBtn,updateBtn;
     TextView location,qualifications,description, subjects,grade,availableTime;
     DatabaseReference dbRef;
 
@@ -34,6 +34,7 @@ public class TeacherProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_profile);
         button=findViewById(R.id.button5);
+        updateBtn=findViewById(R.id.button4);
         AcntDltBtn=findViewById(R.id.DltAcntBtn);
         subjects=findViewById(R.id.textV);
         grade=findViewById(R.id.textV2);
@@ -106,5 +107,14 @@ public class TeacherProfile extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(TeacherProfile.this,TeacherProfileUpdate.class);
+                startActivity(myIntent);
+
+            }
+        });
+
     }
 }

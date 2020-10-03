@@ -27,9 +27,8 @@ public class PlumberProfileActivity extends AppCompatActivity {
     TextView txtName, txtProfession, txtLoction, txtPhoneNo, txtServiceCategory, txtGender, txtAvailableTime, txtQualifications, txtDescription;
     Button btnUpdate, btnCheckAppoinments, btnDelete;
     DatabaseReference dbRef;
-    final static String key="";
-    Plumber plumber;
 
+    Plumber plumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +58,34 @@ public class PlumberProfileActivity extends AppCompatActivity {
         btnCheckAppoinments = findViewById(R.id.btnCheckAppoinment);
         btnDelete = findViewById(R.id.btnDelete);
 
-        btnCheckAppoinments.setOnClickListener(new View.OnClickListener() {
+
+       // DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Plumber");
+
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MH_YnSkx6vYmTwwfmXm");
+        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PlumberProfileActivity.this, MyAppointments.class);
-                String id = plumber.getKey();
-                Log.i(TAG, "id: "+id);
-                intent.putExtra(key, id);
-                startActivity(intent);
-                Log.i(TAG, "key: "+key);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.i(TAG, "onDataChange: ");
+
+                if(dataSnapshot.hasChildren()){
+                    txtName.setText(dataSnapshot.child("name").getValue().toString());
+
+                    txtProfession.setText("Plumber");
+                    txtLoction.setText(dataSnapshot.child("location").getValue().toString());
+                    txtPhoneNo.setText(dataSnapshot.child("contactNo").getValue().toString());
+                  //  txtServiceCategory.setText(dataSnapshot.child(""));
+                   // txtGender.
+                    txtAvailableTime.setText(dataSnapshot.child("availableTime").getValue().toString());
+                    txtQualifications.setText(dataSnapshot.child("qualifications").getValue().toString());
+                    txtDescription.setText(dataSnapshot.child("description").getValue().toString());
+                }else{
+                    Toast.makeText(getApplicationContext(),"No source to display", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.i(TAG, "onCancelled: ");
             }
         });
 
@@ -79,7 +97,7 @@ public class PlumberProfileActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                       //  if(dataSnapshot.hasChild("-MHa9R5ak68ac1Swlgs3")){
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MIOBqOAmnQhpH6E5dEM");
+                            dbRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MHa9R5ak68ac1Swlgs3");
                             dbRef.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Data Deleted Successfully", Toast.LENGTH_SHORT).show();
@@ -105,46 +123,9 @@ public class PlumberProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
             Intent myIntent = new Intent(PlumberProfileActivity.this, PlumberCareerUpdateFormActivity.class);
-                String id = plumber.getKey();
-                Log.i(TAG, "id: "+id);
-                myIntent.putExtra(key, id);
-                Log.i(TAG, "key: "+ key);
             startActivity(myIntent);
             }
         });
 
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MIhkMkdH1nCmTWcBV2y");
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.i(TAG, "onDataChange: ");
-
-                if(dataSnapshot.hasChildren()){
-                    plumber = dataSnapshot.getValue(Plumber.class);
-                    plumber.setKey(dataSnapshot.getKey());
-                    txtName.setText(plumber.getName().toString());
-                    txtProfession.setText("Plumber");
-                    txtLoction.setText(plumber.getLocation().toString());
-                    txtPhoneNo.setText(plumber.getContactNo().toString());
-                    txtAvailableTime.setText(plumber.getAvailableTime().toString());
-                    txtQualifications.setText(plumber.getQualifications().toString());
-                    txtDescription.setText(plumber.getDescription().toString());
-
-
-                }else{
-                    Toast.makeText(getApplicationContext(),"No source to display", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.i(TAG, "onCancelled: ");
-            }
-        });
     }
 }
