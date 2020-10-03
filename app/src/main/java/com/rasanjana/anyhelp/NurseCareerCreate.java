@@ -80,7 +80,7 @@ public class NurseCareerCreate extends AppCompatActivity {
                 List<String> serviceCategories = new ArrayList<>();
 
                 if(BabyCare.isChecked()){
-                    serviceCategories.add("Baby care");
+                    serviceCategories.add("Baby Care");
                 }
                 if(WoundDressing.isChecked()){
                     serviceCategories.add("Wound Dressing");

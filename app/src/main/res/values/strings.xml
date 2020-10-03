@@ -134,6 +134,7 @@
     <string name="next">Next</string>
     <string name="teacherUpdateHeading">Update Your Profile</string>
     <string name="TeacherUpdateBtn">Update Details</string>
+    <string name="NurseUpdateFormButton">Update Details</string>
 
     <string-array name="Location_arrays">
         <item>Colombo</item>

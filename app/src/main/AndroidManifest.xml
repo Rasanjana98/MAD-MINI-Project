@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rasanjana.anyhelp">
-    
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,48 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PaymentActivity">
-
-        </activity>
-        <activity android:name=".MechanicRegistration" >
-
-        </activity>
-        <activity android:name=".MechanicEditProfile" />
-        <activity android:name=".MechanicProfileActivity" >
-
-        </activity>
-        <activity android:name=".CareerProfileActivity" />
-        <activity android:name=".CareerViewAddedAppointment" />
-        <activity android:name=".AddAppointment" />
-        <activity android:name=".MyAppointments" />
-        <activity android:name=".UserMenuActivity" >
-
-        </activity>
-        <activity android:name=".PlumberCareerCreate" >
-
-        </activity>
-        <activity android:name=".TeacherAppointments" />
-        <activity android:name=".NurseProfile" />
-        <activity android:name=".ServiceProviderRegister" />
-        <activity android:name=".NurseCareerCreate" />
-        <activity android:name=".AppHomePage" >
+        <activity android:name=".NurseProfileUpdate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".MechanicRegistration"></activity>
+        <activity android:name=".MechanicEditProfile" />
+        <activity android:name=".MechanicProfileActivity"></activity>
+        <activity android:name=".CareerProfileActivity" />
+        <activity android:name=".CareerViewAddedAppointment" />
+        <activity android:name=".AddAppointment" />
+        <activity android:name=".MyAppointments" />
+        <activity android:name=".UserMenuActivity"></activity>
+        <activity android:name=".PlumberCareerCreate"></activity>
+        <activity android:name=".TeacherAppointments" />
+        <activity android:name=".NurseProfile">
+
+        </activity>
+        <activity android:name=".ServiceProviderRegister" />
+        <activity android:name=".NurseCareerCreate" />
+        <activity android:name=".AppHomePage"></activity>
         <activity android:name=".TeacherProfile" />
-        <activity android:name=".TeacherCareerCreate" >        </activity>
-
+        <activity android:name=".TeacherCareerCreate"></activity>
         <activity android:name=".PlumberProfileActivity" />
-
         <activity android:name=".UserRegister" />
         <activity android:name=".loginPage" />
         <activity android:name=".ChooseRegisterType" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
