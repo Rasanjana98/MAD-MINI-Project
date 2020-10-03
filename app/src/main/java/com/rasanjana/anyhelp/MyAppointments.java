@@ -1,24 +1,75 @@
 package com.rasanjana.anyhelp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.List;
+
 public class MyAppointments extends AppCompatActivity {
+
+    private static final String TAG = "MyAppointments";
+    String key;
+    TableLayout tableLayout;
+    Plumber plumber;
+    DatabaseReference dbRef;
+
+    //SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate: ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointments);
 
-        TableLayout tableLayout = findViewById(R.id.table);
+        Intent intent = getIntent();
+        key = intent.getStringExtra(PlumberProfileActivity.key);
+        Log.i(TAG, "onCreate: key " + key);
+
+        tableLayout = findViewById(R.id.appointmentTable);
         tableLayout.setStretchAllColumns(true);
         tableLayout.bringToFront();
 
+        if(key != null) {
+            dbRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child(key);
+            dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.hasChildren()) {
+                        plumber = snapshot.getValue(Plumber.class);
+                        if (plumber != null) {
+                            showAppointments(plumber.getAppoinments());
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+    }
+    private void showAppointments(final List<Appoinment> appoinments){
+        Log.i(TAG, "showAppointments: ");
+        tableLayout.removeAllViews();
         TableRow header =  new TableRow(this);
         TextView h1 = new TextView(this);
         h1.setText("Date");
@@ -26,124 +77,62 @@ public class MyAppointments extends AppCompatActivity {
         h2.setText("Location");
         TextView h3 = new TextView(this);
         h3.setText("Task");
-        TextView h4 = new TextView(this);
-        h4.setText("");
-        TextView h5 = new TextView(this);
-        h5.setText("");
+
 
         header.addView(h1);
         header.addView(h2);
         header.addView(h3);
-        header.addView(h4);
-        header.addView(h5);
 
-        h1.setBackgroundColor(getResources().getColor(R.color.tableHeader));
-        h2.setBackgroundColor(getResources().getColor(R.color.tableHeader));
-        h3.setBackgroundColor(getResources().getColor(R.color.tableHeader));
-        h4.setBackgroundColor(getResources().getColor(R.color.tableHeader));
-        h5.setBackgroundColor(getResources().getColor(R.color.tableHeader));
+        h1.setBackgroundColor(Color.LTGRAY);
+        h2.setBackgroundColor(Color.LTGRAY);
+        h3.setBackgroundColor(Color.LTGRAY);
 
         h1.setPadding(20, 20 , 20, 20);
         h2.setPadding(20, 20 , 20, 20);
         h3.setPadding(20, 20 , 20, 20);
-        h4.setPadding(20, 20 , 20, 20);
-        h5.setPadding(20, 20 , 20, 20);
 
         tableLayout.addView(header);
 
-        /*for(int i = 1; i < 11; i++){
-            TableRow tr =  new TableRow(this);
-            TextView c1 = new TextView(this);
-            c1.setText("Name "+i);
-            TextView c2 = new TextView(this);
-            c2.setText(String.valueOf(i*10));
-            TextView c3 = new TextView(this);
-            c3.setText(String.valueOf(2*i));
-*/
-//row1
-        TableRow tr = new TableRow(this);
-        TextView c1 = new TextView(this);
-        c1.setText("07/25");
-        TextView c2 = new TextView(this);
-        c2.setText(String.valueOf("Gampaha"));
-        TextView c3 = new TextView(this);
-        c3.setText(String.valueOf("Repair"));
-        ImageView c4 = new ImageView(this);
-        c4.setImageResource(R.drawable.tick);
-        ImageView c5 = new ImageView(this);
-        c5.setImageResource(R.drawable.close);
+        for (int i=0; i < appoinments.size(); i++) {
+            Appoinment appoinment = appoinments.get(i);
+            Log.i(TAG, "shoeAppointments: appointment = "+appoinment);
 
-        tr.addView(c1);
-        tr.addView(c2);
-        tr.addView(c3);
-        tr.addView(c4);
-        tr.addView(c5);
+            TableRow tr =  new TableRow(MyAppointments.this);
+            TextView c1 = new TextView(MyAppointments.this);
+            c1.setText(formatter.format(appoinment.getDate()));
+            TextView c2 = new TextView(MyAppointments.this);
+            c2.setText(appoinment.getLocation());
+            TextView c3 = new TextView(MyAppointments.this);
+            c3.setText(appoinment.getTask());
+            ImageView c4 = new ImageView(this);
+            c4.setImageResource(R.drawable.close);
+            c4.setTag(i);
+            c4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.i(TAG, "onClick: delete click index = "+view.getTag());
+                    int index = (int) view.getTag();
+                    appoinments.remove(index);
+                    plumber.setAppoinments(appoinments);
+                    dbRef.setValue(plumber);
 
-        c1.setPadding(20, 20 , 10, 20);
-        c2.setPadding(20, 20 , 10, 20);
-        c3.setPadding(20, 20 , 10, 20);
-        c4.setPadding(20, 20 , 10, 20);
-        c5.setPadding(20, 20 , 10, 20);
-        //row2
-        TableRow tr1 = new TableRow(this);
-        TextView c11 = new TextView(this);
-        c11.setText("07/26");
-        TextView c22 = new TextView(this);
-        c22.setText(String.valueOf("Veyangoda"));
-        TextView c33 = new TextView(this);
-        c33.setText(String.valueOf("Repair"));
-        ImageView c44 = new ImageView(this);
-        c44.setImageResource(R.drawable.tick);
-        ImageView c55 = new ImageView(this);
-        c55.setImageResource(R.drawable.close);
+                    tableLayout.removeViewAt(index+1);
 
-        tr1.addView(c11);
-        tr1.addView(c22);
-        tr1.addView(c33);
-        tr1.addView(c44);
-        tr1.addView(c55);
+                }
+            });
 
-        c11.setPadding(20, 20 , 20, 20);
-        c22.setPadding(20, 20 , 20, 20);
-        c33.setPadding(20, 20 , 20, 20);
-        c44.setPadding(20, 20 , 20, 20);
-        c55.setPadding(20, 20 , 20, 20);
+            tr.addView(c1);
+            tr.addView(c2);
+            tr.addView(c3);
+            tr.addView(c4);
 
-        //row2
-        TableRow tr11 = new TableRow(this);
-        TextView c111 = new TextView(this);
-        c111.setText("07/27");
-        TextView c222 = new TextView(this);
-        c222.setText(String.valueOf("Veyangoda"));
-        TextView c333 = new TextView(this);
-        c333.setText(String.valueOf("Repair"));
-        ImageView c444 = new ImageView(this);
-        c444.setImageResource(R.drawable.tick);
-        ImageView c555 = new ImageView(this);
-        c555.setImageResource(R.drawable.close);
+            c1.setPadding(20, 20 , 20, 20);
+            c2.setPadding(20, 20 , 20, 20);
+            c3.setPadding(20, 20 , 20, 20);
+            c4.setPadding(20, 20 , 20, 20);
 
-        tr11.addView(c111);
-        tr11.addView(c222);
-        tr11.addView(c333);
-        tr11.addView(c444);
-        tr11.addView(c555);
-
-        c111.setPadding(20, 20 , 20, 20);
-        c222.setPadding(20, 20 , 20, 20);
-        c333.setPadding(20, 20 , 20, 20);
-        c444.setPadding(20, 20 , 20, 20);
-        c555.setPadding(20, 20 , 20, 20);
-
-           /* if(i%2==0){
-                c1.setBackgroundColor(Color.LTGRAY);
-                c2.setBackgroundColor(Color.LTGRAY);
-                c3.setBackgroundColor(Color.LTGRAY);
-            }*/
-
-
-        tableLayout.addView(tr);
-        tableLayout.addView(tr1);
-        tableLayout.addView(tr11);
-        tableLayout.requestLayout();
+            tableLayout.addView(tr);
+            tableLayout.requestLayout();
+        }
     }
 }

@@ -3,9 +3,11 @@ package com.rasanjana.anyhelp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -24,13 +26,20 @@ public class PlumberCareerUpdateFormActivity extends AppCompatActivity {
     EditText txtName, txtContactNo, txtQualifications, txtDescription;
     Spinner spLocation, spAvailableTime;
     Button btnUpdate;
-    DatabaseReference dbRef;
+    String key;
+    DatabaseReference upRef;
     Plumber plumber ;
+
+    ArrayAdapter<CharSequence> locationAdapter;
+    ArrayAdapter<CharSequence> availableTimeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plumber_career_update_form);
+
+        Intent intent = getIntent();
+        key = intent.getStringExtra(PlumberProfileActivity.key);
 
         txtName = findViewById(R.id.EtName);
         txtContactNo = findViewById(R.id.EtConNo);
@@ -40,21 +49,34 @@ public class PlumberCareerUpdateFormActivity extends AppCompatActivity {
         spAvailableTime = findViewById(R.id.SpAvailableTime);
         btnUpdate = findViewById(R.id.btnUpdate);
 
+        locationAdapter = ArrayAdapter.createFromResource(PlumberCareerUpdateFormActivity.this,
+                R.array.addAppointment_location_arrays, android.R.layout.simple_spinner_item);
+        spLocation.setAdapter(locationAdapter);
 
-        DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MH_YnSkx6vYmTwwfmXm");
+        availableTimeAdapter = ArrayAdapter.createFromResource(PlumberCareerUpdateFormActivity.this,
+                R.array.plumber_career_availableTime_arrays, android.R.layout.simple_spinner_item);
+        spAvailableTime.setAdapter(availableTimeAdapter);
+
+        upRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child(key);
         upRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.i(TAG, "onDataChange: ");
-                txtName.setText(dataSnapshot.child("name").getValue().toString());
 
-                //spLocation.setAdapter(dataSnapshot.child("contactNo").getValue());
-                //txtLoction.setText(dataSnapshot.child("location").getValue().toString());
-                txtContactNo.setText(dataSnapshot.child("contactNo").getValue().toString());
-                //txtAvailableTime.setText(dataSnapshot.child("availableTime").getValue().toString());
-                txtQualifications.setText(dataSnapshot.child("qualifications").getValue().toString());
-                txtDescription.setText(dataSnapshot.child("description").getValue().toString());
+                Plumber plumber = dataSnapshot.getValue(Plumber.class);
+
+                txtName.setText(plumber.getName());
+                txtContactNo.setText(String.valueOf(plumber.getContactNo()));
+                txtQualifications.setText(plumber.getQualifications());
+                txtDescription.setText(plumber.getDescription());
+
+                Log.i(TAG, "onDataChange: location = "+plumber.getLocation());
+                int index = locationAdapter.getPosition(plumber.getLocation());
+                spLocation.setSelection(index);
+
+                int index2 = availableTimeAdapter.getPosition(plumber.getAvailableTime());
+                spAvailableTime.setSelection(index2);
             }
 
             @Override
@@ -76,11 +98,11 @@ public class PlumberCareerUpdateFormActivity extends AppCompatActivity {
                 plumber.setQualifications(txtQualifications.getText().toString().trim());
                 plumber.setDescription(txtDescription.getText().toString().trim());
 
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MH_YnSkx6vYmTwwfmXm");
-                dbRef.setValue(plumber);
+                upRef.setValue(plumber);
 
                 //Feedback to the user via toast
                 Toast.makeText(getApplicationContext(),"Data Updated Successfully", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

@@ -95,6 +95,7 @@
             android:text="@string/addAppointment_task" />
 
         <EditText
+            android:id="@+id/etTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
@@ -119,6 +120,7 @@
             android:text="@string/addAppointment_location" />
 
         <Spinner
+            android:id="@+id/SpLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -131,12 +133,13 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
         android:layout_margin="0dp"
+        android:enabled="false"
         android:background="@color/buttonBackground"
         android:textColor="#000000"
         android:text="@string/addAppointment_next" />

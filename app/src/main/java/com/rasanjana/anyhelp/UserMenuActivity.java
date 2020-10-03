@@ -141,6 +141,7 @@ public class UserMenuActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         Log.i(TAG ,"Count = " + dataSnapshot.getChildrenCount());
+                        teachers.clear();
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
                             Teacher teacher = postSnapshot.getValue(Teacher.class);
@@ -214,6 +215,7 @@ public class UserMenuActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         Log.i(TAG ,"Count = " + dataSnapshot.getChildrenCount());
+                        plumbers.clear();
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                             Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
                             Plumber plumber = postSnapshot.getValue(Plumber.class);

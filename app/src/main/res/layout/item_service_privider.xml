@@ -24,13 +24,13 @@
 <!--            android:textColor="#333333"-->
 <!--            android:textSize="16dp" />-->
 <!--    </LinearLayout>-->
-    <LinearLayout
+`    <LinearLayout
         android:id="@+id/frm_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="5"
-        android:layout_margin="20dp">
+        android:layout_margin="20dp">`
 
         <ImageView
             android:id="@+id/imageView2"

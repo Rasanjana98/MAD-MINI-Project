@@ -13,6 +13,7 @@ public class Teacher {
     private String description;
     private List<String> subjects = new ArrayList<>();
     private  List<String>grades= new ArrayList<>();
+    private List<Appoinment> appoinments = new ArrayList<>();
 
     @Exclude
     private String key;
@@ -106,5 +107,13 @@ public class Teacher {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public List<Appoinment> getAppoinments() {
+        return appoinments;
+    }
+
+    public void setAppoinments(List<Appoinment> appoinments) {
+        this.appoinments = appoinments;
     }
 }

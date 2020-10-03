@@ -5,13 +5,14 @@ import com.google.firebase.database.Exclude;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Plumber {
+public class Mechanic {
     private String name;
-    private Integer contactNo;
-    private String location;
     private String availableTime;
-    private String qualifications;
-    private String description;
+    private String Location;
+    private String Time;
+    private String Qualifications;
+    private String Description;
+    private List<String> Fields = new ArrayList<>();
     private List<Appoinment> appoinments = new ArrayList<>();
 
     @Exclude
@@ -19,55 +20,47 @@ public class Plumber {
     @Exclude
     private String profession;
 
-    public Plumber() {
+    public Mechanic() {
     }
 
-    public String getName() {
-        return name;
+    public List<String> getFields() {
+        return Fields;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getContactNo() {
-        return contactNo;
-    }
-
-    public void setContactNo(Integer contactNo) {
-        this.contactNo = contactNo;
+    public void setFields(List<String> fields) {
+        Fields = fields;
     }
 
     public String getLocation() {
-        return location;
+        return Location;
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        Location = location;
     }
 
-    public String getAvailableTime() {
-        return availableTime;
+    public String getTime() {
+        return Time;
     }
 
-    public void setAvailableTime(String availableTime) {
-        this.availableTime = availableTime;
+    public void setTime(String time) {
+        Time = time;
     }
 
     public String getQualifications() {
-        return qualifications;
+        return Qualifications;
     }
 
     public void setQualifications(String qualifications) {
-        this.qualifications = qualifications;
+        Qualifications = qualifications;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     public String getKey() {
@@ -92,5 +85,21 @@ public class Plumber {
 
     public void setAppoinments(List<Appoinment> appoinments) {
         this.appoinments = appoinments;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAvailableTime() {
+        return availableTime;
+    }
+
+    public void setAvailableTime(String availableTime) {
+        this.availableTime = availableTime;
     }
 }

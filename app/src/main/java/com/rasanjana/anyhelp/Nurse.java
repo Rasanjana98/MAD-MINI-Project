@@ -14,6 +14,7 @@ public class Nurse {
     private String  Qualifications;
     private String Description;
     private List<String> serviceCategories = new ArrayList<>();
+    private List<Appoinment> appoinments = new ArrayList<>();
 
     @Exclude
     private String key;
@@ -142,5 +143,13 @@ public class Nurse {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public List<Appoinment> getAppoinments() {
+        return appoinments;
+    }
+
+    public void setAppoinments(List<Appoinment> appoinments) {
+        this.appoinments = appoinments;
     }
 }
