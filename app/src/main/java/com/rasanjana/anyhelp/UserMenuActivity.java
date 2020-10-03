@@ -29,7 +29,7 @@ public class UserMenuActivity extends AppCompatActivity {
     DatabaseReference dbRef;
     private List<Plumber> plumbers;
     private List<Teacher> teachers;
-    //private List<Mechanic> mechanics;
+    private List<Mechanic> mechanics;
     private List<Nurse> nurses;
     public static String profession = "";
     public static String key;
@@ -52,7 +52,7 @@ public class UserMenuActivity extends AppCompatActivity {
 
         plumbers = new ArrayList<>();
         teachers = new ArrayList<>();
-       // mechanics = new ArrayList<>();
+        mechanics = new ArrayList<>();
         nurses = new ArrayList<>();
 
 //get buttons from appHome
@@ -100,14 +100,25 @@ public class UserMenuActivity extends AppCompatActivity {
 
             }
         });
-//        final MechanicUserMenuAdapter mechanicAdapter = new MechanicUserMenuAdapter(this);
-//        mechanicAdapter.setMechanics(mechanics);
-//        mechanicAdapter.setOnItemClickListener(new MechanicUserMenuAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClicked(int position) {
-//                Log.i(TAG, "onItemClicked: position"+position);
-//            }
-//        });
+        final MechanicUserMenuAdapter mechanicAdapter = new MechanicUserMenuAdapter(this);
+        mechanicAdapter.setMechanics(mechanics);
+        mechanicAdapter.setOnItemClickListener(new MechanicUserMenuAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClicked(int position) {
+                Log.i(TAG, "onItemClicked: position"+position);
+                Mechanic mechanic = mechanics.get(position);
+                mechanic.setProfession(profession);
+                Log.i(TAG, "onItemClicked: plumber key = "+mechanic.getKey());
+
+                Intent intent =  new Intent(UserMenuActivity.this, CareerProfileActivity.class);
+                String Key = mechanic.getKey();
+                intent.putExtra(key, Key);
+                intent.putExtra(profession, profession);
+                startActivity(intent);
+                Log.i(TAG, "key: "+Key);
+                Log.i(TAG, "profession: "+profession);
+            }
+        });
         final NurseUserMenuAdapter nurseAdapter = new NurseUserMenuAdapter(this);
         nurseAdapter.setNurses(nurses);
         nurseAdapter.setOnItemClickListener(new NurseUserMenuAdapter.OnItemClickListener() {
@@ -184,29 +195,29 @@ public class UserMenuActivity extends AppCompatActivity {
                 });
                 break;
 
-//            case "Mechanic":
-//                recyclerView.setAdapter(mechanicAdapter);
-  //          txtTitle.setText(profession);
-//                DatabaseReference readRef3 = FirebaseDatabase.getInstance().getReference().child("Mechanic");
-//                readRef3.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        Log.i(TAG ,"Count = " + dataSnapshot.getChildrenCount());
-//                        for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-//                            Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
-//                            Mechanic mechanic = postSnapshot.getValue(Mechanic.class);
-//                            mechanics.add(mechanic);
-//                        }
-//
-//                        mechanicAdapter.notifyDataSetChanged();
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });
-//                break;
+            case "Mechanic":
+                recyclerView.setAdapter(mechanicAdapter);
+            txtTitle.setText(profession);
+                DatabaseReference readRef3 = FirebaseDatabase.getInstance().getReference().child("Mechanic");
+                readRef3.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Log.i(TAG ,"Count = " + dataSnapshot.getChildrenCount());
+                        for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                            Log.i(TAG, "onDataChange: key = "+postSnapshot.getKey());
+                            Mechanic mechanic = postSnapshot.getValue(Mechanic.class);
+                            mechanics.add(mechanic);
+                        }
+
+                        mechanicAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                break;
             case "Plumber":
                 recyclerView.setAdapter(plumberAdapter);
                 txtTitle.setText(profession);

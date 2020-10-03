@@ -47,6 +47,7 @@
             android:textSize="16dp" />
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/date_layout"
         android:layout_width="match_parent"
