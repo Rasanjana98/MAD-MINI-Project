@@ -13,6 +13,7 @@ public class Nurse {
     private String AvailableTime;
     private String  Qualifications;
     private String Description;
+    private String test;
     private List<String> serviceCategories = new ArrayList<>();
     private List<Appoinment> appoinments = new ArrayList<>();
 

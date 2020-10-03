@@ -80,7 +80,7 @@ public class NurseCareerCreate extends AppCompatActivity {
                 List<String> serviceCategories = new ArrayList<>();
 
                 if(BabyCare.isChecked()){
-                    serviceCategories.add("Baby care");
+                    serviceCategories.add("Baby Care");
                 }
                 if(WoundDressing.isChecked()){
                     serviceCategories.add("Wound Dressing");
@@ -156,7 +156,7 @@ public class NurseCareerCreate extends AppCompatActivity {
                         nurse.setServiceCategories(serviceCategories);
 
                         dbRef.push().setValue(nurse);
-                        Toast.makeText(getApplicationContext(),"Data saved Successfully",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext()," saved Successfully",Toast.LENGTH_SHORT).show();
                     }
 //                    public void onRadioButtonClicked(View view){
 //                        boolean checked =((RadioButton) view).isChecked();
