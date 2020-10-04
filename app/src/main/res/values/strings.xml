@@ -69,7 +69,7 @@
         <item>Night</item>
         <item>Day/Night</item>
     </string-array>
-    
+
     <string name="my_appointments_heading">My Appointments</string>
     <string name="career_page_name">Name</string>
     <string name="career_page_profession">Profession</string>

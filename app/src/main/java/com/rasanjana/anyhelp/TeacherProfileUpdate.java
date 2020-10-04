@@ -3,6 +3,7 @@ package com.rasanjana.anyhelp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TeacherProfileUpdate extends AppCompatActivity {
     private  static String TAG ="TeacherProfileUpdate";
@@ -29,14 +31,19 @@ public class TeacherProfileUpdate extends AppCompatActivity {
     CheckBox cbSinhala,cbEnglish,cbScience,cbPhysics,cbTamil,cbBiology,cbMathematics,cbChemistry,cbAccounting,cbEconomics,cbPrimary,cbSixToOl,cbAL;
     Button TeacherProfileUpdate;
     Teacher teacher;
-    DatabaseReference dbRef;
+
+    DatabaseReference updateRef;
+    String key;
 
     ArrayAdapter<CharSequence> locationAdapter;
-    //ArrayAdapter<CharSequence> ava
+    ArrayAdapter<CharSequence> availableTimeAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_profile_update);
+
+        Intent intent =getIntent();
+        key=intent.getStringExtra(TeacherProfile.key);
 
         description=findViewById(R.id.edit_text2);
         qualifications=findViewById(R.id.edit_text);
@@ -57,11 +64,15 @@ public class TeacherProfileUpdate extends AppCompatActivity {
         cbSixToOl=findViewById(R.id.checkBox10);
         cbAL=findViewById(R.id.checkBox11);
 
-        DatabaseReference updateRef = FirebaseDatabase.getInstance().getReference().child("Teacher").child("-MHxxMyNU6slARnIjyYY");
+        locationAdapter=ArrayAdapter.createFromResource(TeacherProfileUpdate.this,R.array.Location_arrays,android.R.layout.simple_spinner_item);
+        locationSpinner.setAdapter(locationAdapter);
+
+        availableTimeAdapter=ArrayAdapter.createFromResource(TeacherProfileUpdate.this,R.array.Time_arrays,android.R.layout.simple_spinner_item);
+        availableTimeSpinner.setAdapter(availableTimeAdapter);
+         updateRef = FirebaseDatabase.getInstance().getReference().child("Teacher").child(key);
         updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.i(TAG,"OnDataChanged");
                 ArrayList<String> subjectList=(ArrayList<String>) snapshot.child("subjects").getValue();
                 String text ="";
 
@@ -114,12 +125,8 @@ public class TeacherProfileUpdate extends AppCompatActivity {
                     }
 
                 }
-                //Adapter locationAdapter = ArrayAdapter.createFromResource(TeacherProfileUpdate.this,R.array.Location_arrays,android.R.layout.simple_spinner_dropdown_item);
-               // locationSpinner.setAdapter(locationAdapter);
                 description.setText(snapshot.child("description").getValue().toString());
                 qualifications.setText(snapshot.child("qualifications").getValue().toString());
-                //locationSpinner.;
-                //locationSpinner.set
             }
 
             @Override
@@ -133,12 +140,59 @@ public class TeacherProfileUpdate extends AppCompatActivity {
                 Log.i(TAG,"onClick");
                 teacher=new Teacher();
 
+                List<String> subjects =new ArrayList<>();
+
+
+                if(cbSinhala.isChecked()){
+                    subjects.add("Sinhala");
+                }
+                if(cbEnglish.isChecked()){
+                    subjects.add("English");
+                }
+                if(cbTamil.isChecked()){
+                    subjects.add("Tamil");
+                }
+                if(cbScience.isChecked()){
+                    subjects.add("Science");
+                }
+                if(cbPhysics.isChecked()){
+                    subjects.add("Physics");
+                }
+                if(cbBiology.isChecked()){
+                    subjects.add("Biology");
+                }
+                if(cbMathematics.isChecked()){
+                    subjects.add("Mathematics");
+                }
+                if(cbChemistry.isChecked()){
+                    subjects.add("Chemistry");
+                }
+                if(cbAccounting.isChecked()){
+                    subjects.add("Accounting");
+                }
+                if(cbEconomics.isChecked()){
+                    subjects.add("Economics");
+                }
+
+                List<String> grades = new ArrayList<>();
+
+                if(cbPrimary.isChecked()){
+                    grades.add("Primary");
+                }
+                if(cbSixToOl.isChecked()){
+                    grades.add("Six-OL");
+                }
+                if(cbAL.isChecked()){
+                    grades.add("A/L");
+                }
+
+
                 teacher.setDescription(description.getText().toString().trim());
                 teacher.setQualifications(qualifications.getText().toString().trim());
+                teacher.setLocation(locationSpinner.getSelectedItem().toString().trim());
+                teacher.setTime(availableTimeSpinner.getSelectedItem().toString().trim());
 
-                dbRef =FirebaseDatabase.getInstance().getReference().child("Teacher").child("-MHvNs8-dxIrp9dW9J7h");
-                dbRef.setValue(teacher);
-
+                updateRef.setValue(teacher);
                 Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_SHORT).show();
 
             }

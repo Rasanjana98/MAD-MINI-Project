@@ -24,6 +24,7 @@ public class TeacherProfile extends AppCompatActivity {
     Button button,AcntDltBtn,updateBtn;
     TextView location,qualifications,description, subjects,grade,availableTime;
     DatabaseReference dbRef;
+    final static String key="";
 
     private static final String TAG = "TeacherProfile";
     Teacher teacher;
@@ -43,45 +44,48 @@ public class TeacherProfile extends AppCompatActivity {
         qualifications=findViewById(R.id.textView28);
         description=findViewById(R.id.textView51);
 
-        FirebaseDatabase.getInstance().getReference().child("teacher");
-        DatabaseReference  readRef=FirebaseDatabase.getInstance().getReference().child("Teacher").child("-MHxxMyNU6slARnIjyYY");
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.i(TAG, "onDataChange: ");
-                if(snapshot.hasChildren()){
-                    ArrayList<String> subjectList = (ArrayList<String>) snapshot.child("subjects").getValue();
-                    String text = "";
-                    for(String subject : subjectList){
-                        text += subject+" ";
-                    }
-                    ArrayList<String> gradeList= (ArrayList<String>) snapshot.child("grades").getValue();
-                    String text1 = "";
-                    for(String  grade : gradeList){
-                        text1 += grade+" ";
-                    }
-                    Log.i(TAG, "onDataChange: subjects = "+subjectList);
-                    subjects.setText(text);
-                    Log.i(TAG,"OnDataChange: grades ="+gradeList);
-                    grade.setText(text1);
-                    location.setText(snapshot.child("location").getValue().toString());
-                    availableTime.setText(snapshot.child("time").getValue().toString());
-                    qualifications.setText(snapshot.child("qualifications").getValue().toString());
-                    description.setText(snapshot.child("description").getValue().toString());
-
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"No source",Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.i(TAG, "onCancelled: ");
+            public void onClick(View view) {
+                Intent intent = new Intent(TeacherProfile.this, TeacherAppoinmentsActivity.class);
+                String id = teacher.getKey();
+                Log.i(TAG, "id: "+id);
+                intent.putExtra(key, id);
+                startActivity(intent);
+                Log.i(TAG, "key: "+key);
             }
         });
-
-
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(TeacherProfile.this, TeacherProfileUpdate.class);
+                String id = teacher.getKey();
+                Log.i(TAG, "id: "+id);
+                myIntent.putExtra(key, id);
+                Log.i(TAG, "key: "+ key);
+                startActivity(myIntent);
+            }
+        });
+        AcntDltBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference deRef = FirebaseDatabase.getInstance().getReference().child("Teacher");
+                deRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        dbRef = FirebaseDatabase.getInstance().getReference().child("Teacher").child(key);
+                        dbRef.removeValue();
+                        Toast.makeText(getApplicationContext(),"Data Deleted Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+                });
+                //move next page
+                Intent myIntent = new Intent(TeacherProfile.this, TeacherCareerCreate.class);
+                startActivity(myIntent);
+            }
+        });
         ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,28 +97,46 @@ public class TeacherProfile extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        button.setOnClickListener(new View.OnClickListener() {
+        FirebaseDatabase.getInstance().getReference().child("teacher");
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Teacher").child("-MInfJLwrpCgn04Eg-nr");
+        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                Intent myIntent=new Intent(TeacherProfile.this,TeacherAppointments.class);
-                startActivity(myIntent);
-            }
-        });
-        AcntDltBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent=new Intent(TeacherProfile.this,TeacherProfileUpdate.class);
-                startActivity(myIntent);
-            }
-        });
-        updateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent=new Intent(TeacherProfile.this,TeacherProfileUpdate.class);
-                startActivity(myIntent);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.i(TAG, "onDataChange: ");
+                if (snapshot.hasChildren()) {
+                    teacher = snapshot.getValue(Teacher.class);
 
+                    teacher.setKey(snapshot.getKey());
+                    ArrayList<String> subjectList = (ArrayList<String>) snapshot.child("subjects").getValue();
+                    String text = "";
+                    for (String subject : subjectList) {
+                        text += subject + " ";
+                    }
+                    ArrayList<String> gradeList = (ArrayList<String>) snapshot.child("grades").getValue();
+                    String text1 = "";
+                    for (String grade : gradeList) {
+                        text1 += grade + " ";
+                    }
+                    Log.i(TAG, "onDataChange: subjects = " + subjectList);
+                    subjects.setText(text);
+                    Log.i(TAG, "OnDataChange: grades =" + gradeList);
+                    grade.setText(text1);
+                    location.setText(snapshot.child("location").getValue().toString());
+                    availableTime.setText(snapshot.child("time").getValue().toString());
+                    qualifications.setText(snapshot.child("qualifications").getValue().toString());
+                    description.setText(snapshot.child("description").getValue().toString());
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "No source", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.i(TAG, "onCancelled: ");
             }
         });
+
 
     }
 }
