@@ -156,6 +156,7 @@ public class MechanicEditProfile extends AppCompatActivity {
                 mech.setQualifications(editTextQualifications.getText().toString().trim());
                 mech.setDescription(editTextDescription.getText().toString().trim());
                 mech.setFields(Fields);
+//mechanic
 
                 upRef.setValue(mech);
 

@@ -20,7 +20,7 @@ public class Mechanic {
     private String key;
     @Exclude
     private String profession;
-
+//mechanic
     public Mechanic() {
     }
 

@@ -48,6 +48,7 @@ public class MechanicUserMenuAdapter extends RecyclerView.Adapter<MechanicUserMe
     public void setMechanics(List<Mechanic> mechanics) {
         this.mechanics = mechanics;
     }
+//mechanic
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

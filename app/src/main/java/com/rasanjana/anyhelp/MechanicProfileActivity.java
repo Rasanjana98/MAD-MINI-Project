@@ -101,6 +101,7 @@ public class MechanicProfileActivity extends AppCompatActivity {
                     mech.setKey(dataSnapshot.getKey());
 
 //                    Add name and profession
+//mechanic
 
 //                    textViewNOut.setText(mech.getName().toString());
 

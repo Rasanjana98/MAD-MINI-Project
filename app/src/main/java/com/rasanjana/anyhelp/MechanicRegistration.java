@@ -145,6 +145,7 @@ public class MechanicRegistration extends AppCompatActivity {
         startActivity(intent);
 
     }
+//mechanic
 
     private void goBack() {
         Intent intent = new Intent(this, MechanicRegistration.class); //MUST CHANGE TO APPROPRIATE CLASS
