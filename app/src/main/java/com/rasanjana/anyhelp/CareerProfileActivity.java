@@ -188,9 +188,9 @@ public class CareerProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChildren()){
-//                    phone = snapshot.child("contactNo").getValue().toString();
-//                    txtTitle.setText(snapshot.child("name").getValue().toString());
-//                    txtName.setText(snapshot.child("name").getValue().toString());
+                    //phone = snapshot.child("contactNo").getValue().toString();
+                    //txtTitle.setText(snapshot.child("name").getValue().toString());
+                   // txtName.setText(snapshot.child("name").getValue().toString());
                     txtProfession.setText(profession);
                     txtLocation.setText(snapshot.child("location").getValue().toString());
                     txtDescription.setText(snapshot.child("description").getValue().toString());

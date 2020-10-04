@@ -78,11 +78,11 @@ public class PlumberProfileActivity extends AppCompatActivity {
                 deRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                      //  if(dataSnapshot.hasChild("-MHa9R5ak68ac1Swlgs3")){
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MIOBqOAmnQhpH6E5dEM");
-                            dbRef.removeValue();
+                        //  if(dataSnapshot.hasChild("-MHa9R5ak68ac1Swlgs3")){
+                        dbRef = FirebaseDatabase.getInstance().getReference().child("Plumber").child("-MIOBqOAmnQhpH6E5dEM");
+                        dbRef.removeValue();
 
-                            Toast.makeText(getApplicationContext(),"Data Deleted Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Data Deleted Successfully", Toast.LENGTH_SHORT).show();
 
 
 //                        }else{
@@ -104,12 +104,12 @@ public class PlumberProfileActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Intent myIntent = new Intent(PlumberProfileActivity.this, PlumberCareerUpdateFormActivity.class);
+                Intent myIntent = new Intent(PlumberProfileActivity.this, PlumberCareerUpdateFormActivity.class);
                 String id = plumber.getKey();
                 Log.i(TAG, "id: "+id);
                 myIntent.putExtra(key, id);
                 Log.i(TAG, "key: "+ key);
-            startActivity(myIntent);
+                startActivity(myIntent);
             }
         });
 
