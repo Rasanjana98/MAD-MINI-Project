@@ -150,4 +150,9 @@
         <item>Night</item>
         <item>Day/Night</item>
     </string-array>
+
+    <string-array name="Gender_arrays">
+    <item>Male</item>
+    <item>Female</item>
+    </string-array>
 </resources>

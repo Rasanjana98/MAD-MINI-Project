@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class AddAppointment extends AppCompatActivity {
     Teacher teacher;
     Nurse nurse;
     Mechanic mechanic;
+    Date selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,14 @@ public class AddAppointment extends AppCompatActivity {
         spLocation = findViewById(R.id.SpLocation);
         etTask = findViewById(R.id.etTask);
         btnNext = findViewById(R.id.btnNext);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int date) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, date);
+                selectedDate = calendar.getTime();
+            }
+        });
 
         //final List<Appoinment> appoinments = new ArrayList<>();
 
@@ -115,7 +125,7 @@ public class AddAppointment extends AppCompatActivity {
                 switch (profession){
                     case "Plumber":
                         Appoinment appoinment = new Appoinment();
-                        appoinment.setDate(new Date(calendarView.getDate()));
+                        appoinment.setDate(selectedDate);
                         appoinment.setLocation(spLocation.getSelectedItem().toString());
                         appoinment.setTask(etTask.getText().toString());
 
@@ -127,7 +137,7 @@ public class AddAppointment extends AppCompatActivity {
                         break;
                     case "Teacher":
                         Appoinment appoinment1 = new Appoinment();
-                        appoinment1.setDate(new Date(calendarView.getDate()));
+                        appoinment1.setDate(selectedDate);
                         appoinment1.setLocation(spLocation.getSelectedItem().toString());
                         appoinment1.setTask(etTask.getText().toString());
 
@@ -139,7 +149,7 @@ public class AddAppointment extends AppCompatActivity {
                         break;
                     case "Nurse":
                         Appoinment appoinment2 = new Appoinment();
-                        appoinment2.setDate(new Date(calendarView.getDate()));
+                        appoinment2.setDate(selectedDate);
                         appoinment2.setLocation(spLocation.getSelectedItem().toString());
                         appoinment2.setTask(etTask.getText().toString());
 
@@ -151,7 +161,7 @@ public class AddAppointment extends AppCompatActivity {
                         break;
                     case "Mechanic":
                         Appoinment appoinment3 = new Appoinment();
-                        appoinment3.setDate(new Date(calendarView.getDate()));
+                        appoinment3.setDate(selectedDate);
                         appoinment3.setLocation(spLocation.getSelectedItem().toString());
                         appoinment3.setTask(etTask.getText().toString());
 
