@@ -12,40 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".NurseProfileUpdate">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".PaymentActivity"></activity>
         <activity android:name=".MechanicRegistration"></activity>
         <activity android:name=".MechanicEditProfile" />
         <activity android:name=".MechanicProfileActivity"></activity>
         <activity android:name=".CareerProfileActivity" />
+
         <activity android:name=".AddAppointment" />
         <activity android:name=".MyAppointments" />
         <activity android:name=".UserMenuActivity"></activity>
         <activity android:name=".PlumberCareerCreate"></activity>
         <activity android:name=".TeacherAppointments" />
         <activity android:name=".NurseProfile">
-        <activity android:name=".PlumberCareerUpdateFormActivity" />
-        <activity android:name=".UserMenuActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".PlumberCareerCreate" >
-
-        </activity>
+        <activity android:name=".NurseAppointmentsActivity"></activity>
         <activity android:name=".ServiceProviderRegister" />
         <activity android:name=".NurseCareerCreate" />
-        <activity android:name=".AppHomePage"></activity>
-        <activity android:name=".TeacherProfile" />
-        <activity android:name=".TeacherCareerCreate" >        </activity>
-
-        <activity android:name=".PlumberProfileActivity" >
+        <activity android:name=".AppHomePage">
 
         </activity>
-
+        <activity android:name=".TeacherProfile" />
         <activity android:name=".TeacherCareerCreate"></activity>
         <activity android:name=".PlumberProfileActivity" />
         <activity android:name=".UserRegister" />

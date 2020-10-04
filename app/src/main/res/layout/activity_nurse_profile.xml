@@ -155,11 +155,11 @@
         android:id="@+id/button4"
         android:layout_width="262dp"
         android:layout_height="38dp"
-        android:layout_marginTop="448dp"
+        android:layout_marginTop="572dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/Nurse_profile_Update_Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -171,7 +171,7 @@
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/Nurse_profile_CheckAppoinments_Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -269,5 +269,22 @@
         app:layout_constraintHorizontal_bias="0.747"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="258dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="641dp"
+        android:layout_marginEnd="202dp"
+        android:layout_marginBottom="42dp"
+        android:backgroundTint="#F32B2B"
+        android:text="Delete My Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
