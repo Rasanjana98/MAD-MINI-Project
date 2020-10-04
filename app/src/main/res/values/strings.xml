@@ -69,7 +69,7 @@
         <item>Night</item>
         <item>Day/Night</item>
     </string-array>
-    
+
     <string name="my_appointments_heading">My Appointments</string>
     <string name="career_page_name">Name</string>
     <string name="career_page_profession">Profession</string>
@@ -133,9 +133,13 @@
     <string name="StartCareer">Start Career</string>
     <string name="EditProfile">Edit Profile</string>
     <string name="next">Next</string>
-    <string name="teacherUpdateHeading">Update Your Profile</string>
-    <string name="TeacherUpdateBtn">Update Details</string>
-    <string name="NurseUpdateFormButton">Update Details</string>
+    <string name="Car">Car</string>
+    <string name="Van">Van</string>
+    <string name="Bike">Bike</string>
+    <string name="Truck">Truck</string>
+    <string name="Industrial_Machinery">Industrial Machinery</string>
+    <string name="Appointments">Appointments</string>
+    <string name="DeleteAppointment">Delete Appointment</string>
 
     <string-array name="Location_arrays">
         <item>Colombo</item>

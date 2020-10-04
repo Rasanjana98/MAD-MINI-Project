@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Mechanic {
     private String name;
+    private String ContactNo;
     private String availableTime;
     private String Location;
     private String Time;
@@ -61,6 +62,14 @@ public class Mechanic {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public String getContactNo() {
+        return ContactNo;
+    }
+
+    public void setContactNo(String contactNo) {
+        ContactNo = contactNo;
     }
 
     public String getKey() {
