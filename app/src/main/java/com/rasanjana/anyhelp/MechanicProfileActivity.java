@@ -48,7 +48,10 @@ public class MechanicProfileActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMechanicUpdate();
+                Intent intent1 = new Intent(MechanicProfileActivity.this, MechanicEditProfile.class);
+                String id = mech.getKey();
+                intent1.putExtra(key, id);
+                startActivity(intent1);
                 Toast.makeText(getApplicationContext(), "Redirecting to update page...",
                         Toast.LENGTH_LONG).show();
             }
@@ -58,7 +61,10 @@ public class MechanicProfileActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openAppointments();
+                Intent intent2 = new Intent(MechanicProfileActivity.this, MechanicAppointment.class);
+                String id = mech.getKey();
+                intent2.putExtra(key, id);
+                startActivity(intent2);
                 Toast.makeText(getApplicationContext(), "Redirecting to Appointment page... ",
                         Toast.LENGTH_LONG).show();
             }
@@ -68,17 +74,16 @@ public class MechanicProfileActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToRegistration();
                 DatabaseReference showRef = FirebaseDatabase.getInstance().getReference().child("Mechanic");
                 showRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("-MIoHaH1FaGsPLdhy_t4")) {
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("Mechanic").child("--MIoGg-FF-dplTzEuy5Q");
+                        if (dataSnapshot.hasChild("-MIspyDMlnysUTAiWnjp")) {
+                            dbRef = FirebaseDatabase.getInstance().getReference().child("Mechanic").child("-MIspyDMlnysUTAiWnjp");
                             dbRef.removeValue();
 
                             Toast.makeText(getApplicationContext(), "Data Successfully Deleted", Toast.LENGTH_SHORT).show();
-                        }else {
+                        } else {
                             Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -87,11 +92,26 @@ public class MechanicProfileActivity extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
+
                 });
             }
         });
 
-        dbRef = FirebaseDatabase.getInstance().getReference().child("Mechanic").child("-MIoHaH1FaGsPLdhy_t4");
+        imageArrow = (ImageView) findViewById(R.id.ivBack);
+        imageArrow.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        dbRef = FirebaseDatabase.getInstance().getReference().child("Mechanic").child("-MIspyDMlnysUTAiWnjp");
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -134,35 +154,5 @@ public class MechanicProfileActivity extends AppCompatActivity {
 
             }
         });
-
-        imageArrow = (ImageView) findViewById(R.id.ivBack);
-        imageArrow.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                goBack();
-            }
-        });
-    }
-
-    private void openMechanicUpdate() {
-        Intent intent1 = new Intent(this, MechanicEditProfile.class);
-        String id = mech.getKey();
-        intent1.putExtra(key, id);
-        startActivity(intent1);
-    }
-    private void openAppointments() {
-        Intent intent2 = new Intent(this, MechanicAppointment.class);
-        String id = mech.getKey();
-        intent2.putExtra(key, id);
-        startActivity(intent2);
-    }
-    private void goBack() {
-        Intent intent3 = new Intent(this, MechanicRegistration.class); //Have to put a dynamic onClick
-        startActivity(intent3);
-    }
-    private void navigateToRegistration() {
-        Intent intent = new Intent(this, MechanicRegistration.class);
-        startActivity(intent);
     }
 }

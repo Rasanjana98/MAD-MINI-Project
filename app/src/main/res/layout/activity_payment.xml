@@ -188,7 +188,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/CareerStart"
         android:layout_width="411dp"
         android:layout_height="58dp"
         android:background="@color/buttonBackground"

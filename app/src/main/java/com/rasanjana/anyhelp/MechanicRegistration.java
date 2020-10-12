@@ -141,7 +141,7 @@ public class MechanicRegistration extends AppCompatActivity {
     }
 
     private void loadPaymentPage() {
-        Intent intent = new Intent(this, MechanicProfileActivity.class);
+        Intent intent = new Intent(this, PaymentActivity.class);
         startActivity(intent);
 
     }
@@ -151,15 +151,4 @@ public class MechanicRegistration extends AppCompatActivity {
         Intent intent = new Intent(this, MechanicRegistration.class); //MUST CHANGE TO APPROPRIATE CLASS
         startActivity(intent);
     }
-
-//    @Override
-//    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        String text = adapterView.getItemAtPosition(i).toString();
-//        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//    }
 }

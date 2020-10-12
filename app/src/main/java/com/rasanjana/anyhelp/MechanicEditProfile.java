@@ -37,6 +37,7 @@ public class MechanicEditProfile extends AppCompatActivity {
     DatabaseReference upRef;
     Mechanic mech;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,23 +75,23 @@ public class MechanicEditProfile extends AppCompatActivity {
                 Log.i(TAG, "OnDataChange");
 
                 imageView = (ImageView) findViewById(R.id.ivBack);
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goBack();
-                    }
-                });
+                //imageView.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        goBack();
+//                    }
+//                });
 
                 mech = dataSnapshot.getValue(Mechanic.class);
 
-                ArrayList<String> FieldsList= (ArrayList<String>) dataSnapshot.child("fields").getValue();
+                List<String> FieldsList = (ArrayList<String>) dataSnapshot.child("fields").getValue();
                 String text =" ";
                 for (String Fields : FieldsList) {
                     text += FieldsList + " ";
 
                     if (Fields.equals("Car")) {
                         checkBoxCar.setChecked(true);
-                        Log.i(TAG, "onDataChange: location "+mech.getLocation());
+
                     }
                     if (Fields.equals("Van")) {
                         checkBoxVan.setChecked(true);
@@ -102,7 +103,9 @@ public class MechanicEditProfile extends AppCompatActivity {
                         checkBoxTruck.setChecked(true);
                     }
 
-                    Log.i(TAG, "onDataChange 2: location "+mech.getLocation());
+                    Log.i(TAG, "onDataChange : location "+mech.getLocation());
+                    Log.i(TAG, "onDataChange: des "+mech.getDescription());
+                    Log.i(TAG, "onDataChange: qua "+mech.getQualifications());
                     if (Fields.equals("Industrial Machinery")) {
                         checkBoxMachines.setChecked(true);
                     }else {
@@ -131,7 +134,7 @@ public class MechanicEditProfile extends AppCompatActivity {
             public void onClick(View view) {
 //                openMechanicProfile();
                 Log.i(TAG,"onClick");
-                mech = new Mechanic();
+                //   mech = new Mechanic();
 
                 List<String> Fields = new ArrayList<>();
 
@@ -172,8 +175,8 @@ public class MechanicEditProfile extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    private void goBack() {
-        Intent intent = new Intent(this, MechanicProfileActivity.class);
-        startActivity(intent);
-    }
+//    private void goBack() {
+//        Intent intent = new Intent(this, MechanicProfileActivity.class);
+//        startActivity(intent);
+//    }
 }
